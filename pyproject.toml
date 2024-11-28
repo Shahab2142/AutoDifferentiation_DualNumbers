@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel", "cython"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dual_autodiff"
+version = "0.1.0"
+description = "A Python package for forward-mode automatic differentiation using dual numbers."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Shahab Yousef-Nasiri", email = "shahab.n2022@yahoo.com" }
+]
+keywords = ["automatic differentiation", "dual numbers", "math", "scientific computing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Natural Language :: English"
+]
+
+[project.urls]
+"Source" = "https://github.com/Shahab2142/dual_autodiff"
+
+[tool.setuptools.packages.find]
+where = ["."]

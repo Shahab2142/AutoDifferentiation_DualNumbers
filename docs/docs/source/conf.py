@@ -15,17 +15,17 @@ release = '0.1.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',  # Automatically generate documentation from docstrings
-    'sphinx.ext.napoleon',  # Support for Google-style docstrings
+    'sphinx.ext.autodoc',  
+    'sphinx.ext.napoleon',  
 ]
 
-# Add any paths that contain templates here, relative to this directory.
+
 templates_path = ['_templates']
 
-# List of patterns to ignore when looking for source files.
+
 exclude_patterns = []
 
-# Add the project directory to the Python path
+
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))

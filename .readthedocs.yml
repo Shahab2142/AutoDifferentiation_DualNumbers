@@ -2,13 +2,11 @@
 
 version: 2
 
-# Build using sphinx
 sphinx:
   configuration: docs/docs/source/conf.py  # Path to your Sphinx configuration file
 
-# Use Python 3.9 (can be changed if needed)
 python:
-  version: 3.9
   install:
     - method: pip
       path: .
+    - requirements: docs/docs/requirements.txt

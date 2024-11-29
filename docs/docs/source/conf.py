@@ -1,40 +1,34 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# Full documentation: https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+import os
+import sys
+
+# -- Path setup --------------------------------------------------------------
+
+# Add the `dual_autodiff` package directory to sys.path for autodoc to find it.
+sys.path.insert(0, os.path.abspath('../../../../dual_autodiff'))
+
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = 'dual_autodiff'
 copyright = '2024, Shahab Yousef-Nasiri'
 author = 'Shahab Yousef-Nasiri'
 release = '0.1.0'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
 extensions = [
-    'sphinx.ext.autodoc',  
-    'sphinx.ext.napoleon',  
+    'sphinx.ext.autodoc',      # Automatically document from docstrings
+    'sphinx.ext.napoleon',     # Support for NumPy/Google-style docstrings
+
 ]
 
-
+# Templates path
 templates_path = ['_templates']
 
-
-exclude_patterns = []
-
-
-import os
-import sys
-sys.path.insert(0, os.path.abspath('..'))
+# Exclude patterns
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-# Use the ReadTheDocs theme (better for readability)
-html_theme = 'sphinx_rtd_theme'
-
-# List of paths that contain custom static files (such as CSS).
-html_static_path = ['_static']
+html_theme = 'sphinx_rtd_theme'  # Use the Read the Docs theme
+html_static_path = ['_static']   # Custom static files (if any)

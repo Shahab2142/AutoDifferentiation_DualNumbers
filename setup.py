@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
 
-# Read the long description from README.md
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 

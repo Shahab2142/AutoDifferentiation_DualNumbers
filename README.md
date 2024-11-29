@@ -157,10 +157,14 @@ except ValueError as e:
 
 ## **Documentation**
 
-Detailed documentation is available in the docs/ directory. To build the documentation locally, ensure you have Sphinx installed and run:
+The online documentation is available on Read the Docs at the following link: https://dual-autodiff-sy475.readthedocs.io/en/latest/
+
+To build the documentation locally, ensure you have Sphinx installed and run:
 
 cd docs/docs
 make html
+
+
 
 ---
 

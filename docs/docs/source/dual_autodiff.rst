@@ -24,13 +24,16 @@ Key Advantages
 1. **Simplifies Derivative Computation**  
    Automatically computes derivatives of complex mathematical functions without requiring symbolic differentiation or numerical approximations.
 
-2. **Lightweight and Standalone**  
+2. **Utility Function for Derivatives**  
+   The `differentiate` function provides a direct and efficient interface for computing derivatives of scalar functions.
+
+3. **Lightweight and Standalone**  
    Relies only on Python’s built-in `math` library, ensuring ease of installation and high portability.
 
-3. **Robust Error Handling**  
+4. **Robust Error Handling**  
    Includes detailed checks for common errors, such as division by zero or invalid logarithmic inputs.
 
-4. **Intuitive API**  
+5. **Intuitive API**  
    Provides a clean and user-friendly interface for defining and evaluating mathematical expressions.
 
 Supported Features
@@ -87,8 +90,6 @@ Inverse Hyperbolic Functions
 
 Error Handling
 --------------
-
-
 The `Dual` class includes robust error handling to ensure safe and reliable computations. Common errors handled include:
 
 - **Division by Zero**: Raises a `ZeroDivisionError` for division by zero.
@@ -125,6 +126,10 @@ Basic Arithmetic with Dual Numbers
 Derivatives of Mathematical Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The `dual_autodiff` package simplifies derivative computation using two approaches:
+
+**Using the Dual Class Directly**:
+
 .. code-block:: python
 
    from dual_autodiff.dual import Dual
@@ -142,6 +147,21 @@ Derivatives of Mathematical Functions
    print("Value of f(x):", result.real)
    print("Derivative of f(x):", result.dual)
 
+**Using the differentiate Utility**:
+
+.. code-block:: python
+
+   from dual_autodiff.dual import differentiate
+
+   # Define a function f(x)
+   def f(x):
+       return x.sin() + x.exp()
+
+   # Compute the derivative at x = 2
+   df_dx = differentiate(f, 2)
+
+   print("Derivative of f(x) at x=2:", df_dx)
+
 Composite Functions
 ~~~~~~~~~~~~~~~~~~~
 
@@ -153,14 +173,11 @@ Composite Functions
    def g(x):
        return (x**2).sin() + x.sqrt()
 
-   # Initialize a dual number
-   x = Dual(3, 1)
+   # Compute the derivative using differentiate
+   from dual_autodiff.dual import differentiate
+   dg_dx = differentiate(g, 3)
 
-   # Compute the function value and its derivative
-   result = g(x)
-
-   print("Value of g(x):", result.real)
-   print("Derivative of g(x):", result.dual)
+   print("Derivative of g(x) at x=3:", dg_dx)
 
 Advanced Mathematical Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,6 +234,7 @@ Handling Errors Gracefully
    except ValueError as e:
        print(f"Error: {e}")
 
+
 Best Practices
 --------------
 
@@ -228,9 +246,6 @@ Best Practices
 
 3. **Leverage Composite Functions**  
    Combine `Dual` objects effectively to compute derivatives of complex expressions.
-
-Use Cases
----------
 
 Educational Purposes
 ~~~~~~~~~~~~~~~~~~~~

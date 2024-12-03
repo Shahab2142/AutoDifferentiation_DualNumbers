@@ -1,13 +1,7 @@
-from setuptools import setup, find_packages, Extension
-from Cython.Build import cythonize
+from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
-
-extensions = [
-    Extension("dual_autodiff.dual", ["dual_autodiff/dual.py"]),
-    Extension("dual_autodiff.version", ["dual_autodiff/version.py"]),
-]
 
 setup(
     name="dual_autodiff",
@@ -19,7 +13,6 @@ setup(
     author_email="shahab.n2022@yahoo.com",
     url="https://github.com/Shahab2142/dual_autodiff",
     packages=find_packages(),
-    ext_modules=cythonize(extensions, compiler_directives={"language_level": "3"}),
     zip_safe=False,
     install_requires=[],  # No dependencies since only math is used
     classifiers=[

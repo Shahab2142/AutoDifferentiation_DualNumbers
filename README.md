@@ -30,7 +30,7 @@ pip install .
 ### **3.  Install the Cythonized Version (Optional)**
 
 ```bash
-python setup.py build_ext --inplace
+python setup_cython.py build_ext --inplace
 pip install .
 ```
 
@@ -106,30 +106,44 @@ z_atanh = Dual(0.5, 1).atanh()  # Dual(real=atanh(0.5), dual=1/(1-0.5^2))
 
 ---
 
-## **Examples of Specific Functions**
+## **Examples of Specific Function Derivatives**
 
 ### **1. Derivative of $f(x) = \sin(x^2) + \exp(x)$:**
 
 ```python
-x = Dual(3, 1)  
-f = (x**2).sin() + x.exp()  
-print(f)  # Dual(real=sin(9) + exp(3), dual=2*x*cos(9) + exp(3))
+from dual_autodiff.dual import differentiate
+
+# Define the function
+def f(x):
+    return (x**2).sin() + x.exp()
+
+# Compute the derivative at x = 3
+df_dx = differentiate(f, 3)
+print(df_dx)  # 2*x*cos(9) + exp(3), evaluated at x=3
+
 
 ```
 
-### **2. Composite Functions: $\sin(x) \cdot \exp(x)$ and $\cos(\exp(x))$:**
+### **2. Derivative of Composite Functions: $\sin(x) \cdot \exp(x)$ and $\cos(\exp(x))$:**
 
 ```python
-x = Dual(3, 1)
+from dual_autodiff.dual import differentiate
 
-# f(x) = sin(x) * exp(x)
-f_composite_one = x.sin() * x.exp() 
-print(f_composite_one) # Dual(real=sin(3)*exp(3), dual=exp(3)*cos(3) + sin(3)*exp(3))
+# Define the function
+def f(x):
+    return x.sin() * x.exp()
 
-# f(x) = cos(exp(x))
-f_composite_two = x.exp().cos()
-print(f_composite_two)  # Dual(real=cos(exp(3)), dual=-sin(exp(3))*exp(3))
+# Compute the derivative at x = 3
+df_dx = differentiate(f, 3)
+print(df_dx)  # exp(3)*cos(3) + sin(3)*exp(3)
 
+# Define the function
+def g(x):
+    return x.exp().cos()
+
+# Compute the derivative at x = 3
+dg_dx = differentiate(g, 3)
+print(dg_dx)  # -sin(exp(3)) * exp(3)
 ```
 
 ---

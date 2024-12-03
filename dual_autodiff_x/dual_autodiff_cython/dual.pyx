@@ -212,11 +212,11 @@ class Dual:
 
         :param other: A Dual object or a scalar (int or float).
         :return: A new Dual object representing the result.
-        :raises ValueError: If the base is non-positive for real exponent.
+        :raises ValueError: If the base is non-positive and the exponent is not an integer.
         """
         if isinstance(other, Dual):
             if self.real <= 0:
-                raise ValueError("Power undefined for non-positive real base.")
+                raise ValueError("Power undefined for non-positive real base with dual exponent.")
             real_part = self.real ** other.real
             dual_part = real_part * (
                 other.real * self.dual / self.real +
@@ -224,10 +224,10 @@ class Dual:
             )
             return Dual(real_part, dual_part)
         elif isinstance(other, (int, float)):
-            if self.real <= 0:
-                raise ValueError("Power undefined for non-positive real base.")
+            if self.real < 0 and not isinstance(other, int):
+                raise ValueError("Power undefined for non-integer exponent with negative base.")
             real_part = self.real ** other
-            dual_part = other * (self.real ** (other - 1)) * self.dual
+            dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual
             return Dual(real_part, dual_part)
         return NotImplemented
 
@@ -562,3 +562,15 @@ class Dual:
         :return: True if the real part is negative, False otherwise.
         """
         return self.real < 0
+
+def differentiate(func, x):
+    """
+    Compute the first derivative of a function using dual numbers.
+
+    :param func: The function to differentiate.
+    :param x: The point at which to compute the derivative.
+    :return: The derivative of the function at x.
+    """
+    dual_x = Dual(x, 1)  # Convert x into a Dual number
+    result = func(dual_x)  # Evaluate the function with the Dual number
+    return result.dual  # Extract the derivative (dual part)

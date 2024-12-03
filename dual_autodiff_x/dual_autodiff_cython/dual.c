@@ -2201,6 +2201,7 @@ static PyObject *__pyx_builtin_NotImplemented;
 static PyObject *__pyx_builtin_ZeroDivisionError;
 static PyObject *__pyx_builtin_round;
 /* #### Code section: string_decls ### */
+static const char __pyx_k_x[] = "x";
 static const char __pyx_k__4[] = ", ";
 static const char __pyx_k__5[] = ")";
 static const char __pyx_k__6[] = " + ";
@@ -2211,8 +2212,8 @@ static const char __pyx_k_gt[] = "__gt__";
 static const char __pyx_k_le[] = "__le__";
 static const char __pyx_k_lt[] = "__lt__";
 static const char __pyx_k_ne[] = "__ne__";
-static const char __pyx_k__21[] = "*";
-static const char __pyx_k__76[] = "?";
+static const char __pyx_k__23[] = "*";
+static const char __pyx_k__80[] = "?";
 static const char __pyx_k_abs[] = "abs";
 static const char __pyx_k_add[] = "__add__";
 static const char __pyx_k_cls[] = "cls";
@@ -2234,6 +2235,7 @@ static const char __pyx_k_cosh[] = "cosh";
 static const char __pyx_k_data[] = "data";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_dual[] = "dual";
+static const char __pyx_k_func[] = "func";
 static const char __pyx_k_init[] = "__init__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_math[] = "math";
@@ -2260,8 +2262,10 @@ static const char __pyx_k_other[] = "other";
 static const char __pyx_k_round[] = "round";
 static const char __pyx_k_super[] = "super";
 static const char __pyx_k_Dual_2[] = "Dual";
+static const char __pyx_k_dual_x[] = "dual_x";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_module[] = "__module__";
+static const char __pyx_k_result[] = "result";
 static const char __pyx_k_is_zero[] = "is_zero";
 static const char __pyx_k_ndigits[] = "ndigits";
 static const char __pyx_k_prepare[] = "__prepare__";
@@ -2321,6 +2325,7 @@ static const char __pyx_k_Dual_is_zero[] = "Dual.is_zero";
 static const char __pyx_k_Dual_to_dict[] = "Dual.to_dict";
 static const char __pyx_k_initializing[] = "_initializing";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
+static const char __pyx_k_differentiate[] = "differentiate";
 static const char __pyx_k_init_subclass[] = "__init_subclass__";
 static const char __pyx_k_Dual___truediv[] = "Dual.__truediv__";
 static const char __pyx_k_Dual_conjugate[] = "Dual.conjugate";
@@ -2340,19 +2345,21 @@ static const char __pyx_k_Cannot_divide_by_Infinity[] = "Cannot divide by Infini
 static const char __pyx_k_dual_autodiff_cython_dual[] = "dual_autodiff_cython.dual";
 static const char __pyx_k_dual_autodiff_cython_dual_pyx[] = "dual_autodiff_cython/dual.pyx";
 static const char __pyx_k_A_class_to_represent_dual_numbe[] = "\n    A class to represent dual numbers and perform automatic differentiation.\n\n    A dual number is represented as `x + y\316\265`, where `x` is the real part,\n    `y` is the dual part, and `\316\265` is an infinitesimal unit satisfying `\316\265^2 = 0`.\n\n    This implementation allows basic arithmetic, comparison, and mathematical\n    operations, enabling automatic differentiation.\n\n    Attributes:\n        real (float): The real part of the dual number.\n        dual (float): The dual part of the dual number.\n    ";
+static const char __pyx_k_Power_undefined_for_non_integer[] = "Power undefined for non-integer exponent with negative base.";
 static const char __pyx_k_Real_or_dual_part_cannot_be_NaN[] = "Real or dual part cannot be NaN.";
 static const char __pyx_k_Both_real_and_dual_parts_must_be[] = "Both real and dual parts must be numbers.";
 static const char __pyx_k_Cannot_divide_by_a_dual_number_c[] = "Cannot divide by a dual number containing NaN.";
 static const char __pyx_k_Division_by_zero_in_the_real_par[] = "Division by zero in the real part.";
 static const char __pyx_k_Exponential_function_undefined_f[] = "Exponential function undefined for infinite real part.";
 static const char __pyx_k_Logarithm_undefined_for_non_posi[] = "Logarithm undefined for non-positive real part.";
-static const char __pyx_k_Power_undefined_for_non_positive[] = "Power undefined for non-positive real base.";
+static const char __pyx_k_Power_undefined_for_non_positive[] = "Power undefined for non-positive real base with dual exponent.";
 static const char __pyx_k_Real_or_dual_part_cannot_be_Infi[] = "Real or dual part cannot be Infinity.";
 static const char __pyx_k_Square_root_undefined_for_negati[] = "Square root undefined for negative real part.";
 static const char __pyx_k_Tangent_undefined_at_odd_multipl[] = "Tangent undefined at odd multiples of \317\200/2.";
 static const char __pyx_k_acosh_undefined_for_real_part_le[] = "acosh undefined for real part less than 1.";
 static const char __pyx_k_atanh_undefined_for_absolute_rea[] = "atanh undefined for absolute real part >= 1.";
 static const char __pyx_k_Cannot_divide_by_a_dual_number_c_2[] = "Cannot divide by a dual number containing Infinity.";
+static const char __pyx_k_Power_undefined_for_non_positive_2[] = "Power undefined for non-positive real base.";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_real, PyObject *__pyx_v_dual); /* proto */
 static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_2__repr__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
@@ -2399,6 +2406,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_82ceil(CYTHON_UNUSE
 static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_84is_zero(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_86is_positive(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_88is_negative(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_differentiate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_func, PyObject *__pyx_v_x); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 typedef struct {
@@ -2429,13 +2437,13 @@ typedef struct {
   #if CYTHON_USE_MODULE_STATE
   #endif
   PyObject *__pyx_kp_s_A_class_to_represent_dual_numbe;
-  PyObject *__pyx_kp_s_Both_real_and_dual_parts_must_be;
-  PyObject *__pyx_kp_s_Cannot_divide_by_Infinity;
-  PyObject *__pyx_kp_s_Cannot_divide_by_NaN;
-  PyObject *__pyx_kp_s_Cannot_divide_by_a_dual_number_c;
-  PyObject *__pyx_kp_s_Cannot_divide_by_a_dual_number_c_2;
-  PyObject *__pyx_kp_s_Division_by_zero;
-  PyObject *__pyx_kp_s_Division_by_zero_in_the_real_par;
+  PyObject *__pyx_kp_u_Both_real_and_dual_parts_must_be;
+  PyObject *__pyx_kp_u_Cannot_divide_by_Infinity;
+  PyObject *__pyx_kp_u_Cannot_divide_by_NaN;
+  PyObject *__pyx_kp_u_Cannot_divide_by_a_dual_number_c;
+  PyObject *__pyx_kp_u_Cannot_divide_by_a_dual_number_c_2;
+  PyObject *__pyx_kp_u_Division_by_zero;
+  PyObject *__pyx_kp_u_Division_by_zero_in_the_real_par;
   PyObject *__pyx_kp_u_Dual;
   PyObject *__pyx_n_s_Dual_2;
   PyObject *__pyx_n_s_Dual___add;
@@ -2483,31 +2491,33 @@ typedef struct {
   PyObject *__pyx_n_s_Dual_tan;
   PyObject *__pyx_n_s_Dual_tanh;
   PyObject *__pyx_n_s_Dual_to_dict;
-  PyObject *__pyx_kp_s_Exponential_function_undefined_f;
-  PyObject *__pyx_kp_s_Logarithm_undefined_for_non_posi;
+  PyObject *__pyx_kp_u_Exponential_function_undefined_f;
+  PyObject *__pyx_kp_u_Logarithm_undefined_for_non_posi;
   PyObject *__pyx_n_s_NotImplemented;
-  PyObject *__pyx_kp_s_Power_undefined_for_non_positive;
-  PyObject *__pyx_kp_s_Real_or_dual_part_cannot_be_Infi;
-  PyObject *__pyx_kp_s_Real_or_dual_part_cannot_be_NaN;
-  PyObject *__pyx_kp_s_Square_root_undefined_for_negati;
-  PyObject *__pyx_kp_s_Tangent_undefined_at_odd_multipl;
+  PyObject *__pyx_kp_u_Power_undefined_for_non_integer;
+  PyObject *__pyx_kp_u_Power_undefined_for_non_positive;
+  PyObject *__pyx_kp_u_Power_undefined_for_non_positive_2;
+  PyObject *__pyx_kp_u_Real_or_dual_part_cannot_be_Infi;
+  PyObject *__pyx_kp_u_Real_or_dual_part_cannot_be_NaN;
+  PyObject *__pyx_kp_u_Square_root_undefined_for_negati;
+  PyObject *__pyx_kp_u_Tangent_undefined_at_odd_multipl;
   PyObject *__pyx_n_s_TypeError;
   PyObject *__pyx_n_s_ValueError;
   PyObject *__pyx_n_s_ZeroDivisionError;
-  PyObject *__pyx_n_s__21;
+  PyObject *__pyx_n_s__23;
   PyObject *__pyx_kp_u__4;
   PyObject *__pyx_kp_u__5;
   PyObject *__pyx_kp_u__6;
   PyObject *__pyx_n_u__7;
-  PyObject *__pyx_n_s__76;
+  PyObject *__pyx_n_s__80;
   PyObject *__pyx_n_s_abs;
   PyObject *__pyx_n_s_acosh;
-  PyObject *__pyx_kp_s_acosh_undefined_for_real_part_le;
+  PyObject *__pyx_kp_u_acosh_undefined_for_real_part_le;
   PyObject *__pyx_n_s_add;
   PyObject *__pyx_n_s_asinh;
   PyObject *__pyx_n_s_asyncio_coroutines;
   PyObject *__pyx_n_s_atanh;
-  PyObject *__pyx_kp_s_atanh_undefined_for_absolute_rea;
+  PyObject *__pyx_kp_u_atanh_undefined_for_absolute_rea;
   PyObject *__pyx_n_s_ceil;
   PyObject *__pyx_n_s_cline_in_traceback;
   PyObject *__pyx_n_s_cls;
@@ -2516,16 +2526,20 @@ typedef struct {
   PyObject *__pyx_n_s_cosh;
   PyObject *__pyx_n_s_data;
   PyObject *__pyx_n_s_dict;
+  PyObject *__pyx_n_s_differentiate;
   PyObject *__pyx_n_s_doc;
   PyObject *__pyx_n_s_dual;
+  PyObject *__pyx_n_u_dual;
   PyObject *__pyx_n_s_dual_autodiff_cython_dual;
   PyObject *__pyx_kp_s_dual_autodiff_cython_dual_pyx;
   PyObject *__pyx_n_s_dual_part;
+  PyObject *__pyx_n_s_dual_x;
   PyObject *__pyx_n_s_eq;
   PyObject *__pyx_n_s_exp;
   PyObject *__pyx_n_s_floor;
   PyObject *__pyx_n_s_floordiv;
   PyObject *__pyx_n_s_from_dict;
+  PyObject *__pyx_n_s_func;
   PyObject *__pyx_n_s_ge;
   PyObject *__pyx_n_s_gt;
   PyObject *__pyx_n_s_import;
@@ -2557,8 +2571,10 @@ typedef struct {
   PyObject *__pyx_n_s_qualname;
   PyObject *__pyx_n_s_radd;
   PyObject *__pyx_n_s_real;
+  PyObject *__pyx_n_u_real;
   PyObject *__pyx_n_s_real_part;
   PyObject *__pyx_n_s_repr;
+  PyObject *__pyx_n_s_result;
   PyObject *__pyx_n_s_rfloordiv;
   PyObject *__pyx_n_s_rmul;
   PyObject *__pyx_n_s_round;
@@ -2580,6 +2596,7 @@ typedef struct {
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_to_dict;
   PyObject *__pyx_n_s_truediv;
+  PyObject *__pyx_n_s_x;
   PyObject *__pyx_float_0_0;
   PyObject *__pyx_int_0;
   PyObject *__pyx_int_1;
@@ -2600,26 +2617,27 @@ typedef struct {
   PyObject *__pyx_tuple__18;
   PyObject *__pyx_tuple__19;
   PyObject *__pyx_tuple__20;
+  PyObject *__pyx_tuple__21;
   PyObject *__pyx_tuple__22;
   PyObject *__pyx_tuple__24;
-  PyObject *__pyx_tuple__25;
-  PyObject *__pyx_tuple__28;
-  PyObject *__pyx_tuple__35;
-  PyObject *__pyx_tuple__50;
-  PyObject *__pyx_tuple__66;
+  PyObject *__pyx_tuple__26;
+  PyObject *__pyx_tuple__27;
+  PyObject *__pyx_tuple__30;
+  PyObject *__pyx_tuple__37;
+  PyObject *__pyx_tuple__52;
   PyObject *__pyx_tuple__68;
   PyObject *__pyx_tuple__70;
-  PyObject *__pyx_codeobj__23;
-  PyObject *__pyx_codeobj__26;
-  PyObject *__pyx_codeobj__27;
+  PyObject *__pyx_tuple__72;
+  PyObject *__pyx_tuple__78;
+  PyObject *__pyx_codeobj__25;
+  PyObject *__pyx_codeobj__28;
   PyObject *__pyx_codeobj__29;
-  PyObject *__pyx_codeobj__30;
   PyObject *__pyx_codeobj__31;
   PyObject *__pyx_codeobj__32;
   PyObject *__pyx_codeobj__33;
   PyObject *__pyx_codeobj__34;
+  PyObject *__pyx_codeobj__35;
   PyObject *__pyx_codeobj__36;
-  PyObject *__pyx_codeobj__37;
   PyObject *__pyx_codeobj__38;
   PyObject *__pyx_codeobj__39;
   PyObject *__pyx_codeobj__40;
@@ -2632,8 +2650,8 @@ typedef struct {
   PyObject *__pyx_codeobj__47;
   PyObject *__pyx_codeobj__48;
   PyObject *__pyx_codeobj__49;
+  PyObject *__pyx_codeobj__50;
   PyObject *__pyx_codeobj__51;
-  PyObject *__pyx_codeobj__52;
   PyObject *__pyx_codeobj__53;
   PyObject *__pyx_codeobj__54;
   PyObject *__pyx_codeobj__55;
@@ -2647,13 +2665,16 @@ typedef struct {
   PyObject *__pyx_codeobj__63;
   PyObject *__pyx_codeobj__64;
   PyObject *__pyx_codeobj__65;
+  PyObject *__pyx_codeobj__66;
   PyObject *__pyx_codeobj__67;
   PyObject *__pyx_codeobj__69;
   PyObject *__pyx_codeobj__71;
-  PyObject *__pyx_codeobj__72;
   PyObject *__pyx_codeobj__73;
   PyObject *__pyx_codeobj__74;
   PyObject *__pyx_codeobj__75;
+  PyObject *__pyx_codeobj__76;
+  PyObject *__pyx_codeobj__77;
+  PyObject *__pyx_codeobj__79;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2697,13 +2718,13 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_FusedFunctionType);
   #endif
   Py_CLEAR(clear_module_state->__pyx_kp_s_A_class_to_represent_dual_numbe);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Both_real_and_dual_parts_must_be);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Cannot_divide_by_Infinity);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Cannot_divide_by_NaN);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Cannot_divide_by_a_dual_number_c);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Cannot_divide_by_a_dual_number_c_2);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Division_by_zero);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Division_by_zero_in_the_real_par);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Both_real_and_dual_parts_must_be);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Cannot_divide_by_Infinity);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Cannot_divide_by_NaN);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Cannot_divide_by_a_dual_number_c);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Cannot_divide_by_a_dual_number_c_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Division_by_zero);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Division_by_zero_in_the_real_par);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Dual);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual___add);
@@ -2751,31 +2772,33 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual_tan);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual_tanh);
   Py_CLEAR(clear_module_state->__pyx_n_s_Dual_to_dict);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Exponential_function_undefined_f);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Logarithm_undefined_for_non_posi);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Exponential_function_undefined_f);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Logarithm_undefined_for_non_posi);
   Py_CLEAR(clear_module_state->__pyx_n_s_NotImplemented);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Power_undefined_for_non_positive);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Real_or_dual_part_cannot_be_Infi);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Real_or_dual_part_cannot_be_NaN);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Square_root_undefined_for_negati);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Tangent_undefined_at_odd_multipl);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Power_undefined_for_non_integer);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Power_undefined_for_non_positive);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Power_undefined_for_non_positive_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Real_or_dual_part_cannot_be_Infi);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Real_or_dual_part_cannot_be_NaN);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Square_root_undefined_for_negati);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Tangent_undefined_at_odd_multipl);
   Py_CLEAR(clear_module_state->__pyx_n_s_TypeError);
   Py_CLEAR(clear_module_state->__pyx_n_s_ValueError);
   Py_CLEAR(clear_module_state->__pyx_n_s_ZeroDivisionError);
-  Py_CLEAR(clear_module_state->__pyx_n_s__21);
+  Py_CLEAR(clear_module_state->__pyx_n_s__23);
   Py_CLEAR(clear_module_state->__pyx_kp_u__4);
   Py_CLEAR(clear_module_state->__pyx_kp_u__5);
   Py_CLEAR(clear_module_state->__pyx_kp_u__6);
   Py_CLEAR(clear_module_state->__pyx_n_u__7);
-  Py_CLEAR(clear_module_state->__pyx_n_s__76);
+  Py_CLEAR(clear_module_state->__pyx_n_s__80);
   Py_CLEAR(clear_module_state->__pyx_n_s_abs);
   Py_CLEAR(clear_module_state->__pyx_n_s_acosh);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_acosh_undefined_for_real_part_le);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_acosh_undefined_for_real_part_le);
   Py_CLEAR(clear_module_state->__pyx_n_s_add);
   Py_CLEAR(clear_module_state->__pyx_n_s_asinh);
   Py_CLEAR(clear_module_state->__pyx_n_s_asyncio_coroutines);
   Py_CLEAR(clear_module_state->__pyx_n_s_atanh);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_atanh_undefined_for_absolute_rea);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_atanh_undefined_for_absolute_rea);
   Py_CLEAR(clear_module_state->__pyx_n_s_ceil);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
   Py_CLEAR(clear_module_state->__pyx_n_s_cls);
@@ -2784,16 +2807,20 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_cosh);
   Py_CLEAR(clear_module_state->__pyx_n_s_data);
   Py_CLEAR(clear_module_state->__pyx_n_s_dict);
+  Py_CLEAR(clear_module_state->__pyx_n_s_differentiate);
   Py_CLEAR(clear_module_state->__pyx_n_s_doc);
   Py_CLEAR(clear_module_state->__pyx_n_s_dual);
+  Py_CLEAR(clear_module_state->__pyx_n_u_dual);
   Py_CLEAR(clear_module_state->__pyx_n_s_dual_autodiff_cython_dual);
   Py_CLEAR(clear_module_state->__pyx_kp_s_dual_autodiff_cython_dual_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_dual_part);
+  Py_CLEAR(clear_module_state->__pyx_n_s_dual_x);
   Py_CLEAR(clear_module_state->__pyx_n_s_eq);
   Py_CLEAR(clear_module_state->__pyx_n_s_exp);
   Py_CLEAR(clear_module_state->__pyx_n_s_floor);
   Py_CLEAR(clear_module_state->__pyx_n_s_floordiv);
   Py_CLEAR(clear_module_state->__pyx_n_s_from_dict);
+  Py_CLEAR(clear_module_state->__pyx_n_s_func);
   Py_CLEAR(clear_module_state->__pyx_n_s_ge);
   Py_CLEAR(clear_module_state->__pyx_n_s_gt);
   Py_CLEAR(clear_module_state->__pyx_n_s_import);
@@ -2825,8 +2852,10 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_qualname);
   Py_CLEAR(clear_module_state->__pyx_n_s_radd);
   Py_CLEAR(clear_module_state->__pyx_n_s_real);
+  Py_CLEAR(clear_module_state->__pyx_n_u_real);
   Py_CLEAR(clear_module_state->__pyx_n_s_real_part);
   Py_CLEAR(clear_module_state->__pyx_n_s_repr);
+  Py_CLEAR(clear_module_state->__pyx_n_s_result);
   Py_CLEAR(clear_module_state->__pyx_n_s_rfloordiv);
   Py_CLEAR(clear_module_state->__pyx_n_s_rmul);
   Py_CLEAR(clear_module_state->__pyx_n_s_round);
@@ -2848,6 +2877,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_to_dict);
   Py_CLEAR(clear_module_state->__pyx_n_s_truediv);
+  Py_CLEAR(clear_module_state->__pyx_n_s_x);
   Py_CLEAR(clear_module_state->__pyx_float_0_0);
   Py_CLEAR(clear_module_state->__pyx_int_0);
   Py_CLEAR(clear_module_state->__pyx_int_1);
@@ -2868,26 +2898,27 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_tuple__18);
   Py_CLEAR(clear_module_state->__pyx_tuple__19);
   Py_CLEAR(clear_module_state->__pyx_tuple__20);
+  Py_CLEAR(clear_module_state->__pyx_tuple__21);
   Py_CLEAR(clear_module_state->__pyx_tuple__22);
   Py_CLEAR(clear_module_state->__pyx_tuple__24);
-  Py_CLEAR(clear_module_state->__pyx_tuple__25);
-  Py_CLEAR(clear_module_state->__pyx_tuple__28);
-  Py_CLEAR(clear_module_state->__pyx_tuple__35);
-  Py_CLEAR(clear_module_state->__pyx_tuple__50);
-  Py_CLEAR(clear_module_state->__pyx_tuple__66);
+  Py_CLEAR(clear_module_state->__pyx_tuple__26);
+  Py_CLEAR(clear_module_state->__pyx_tuple__27);
+  Py_CLEAR(clear_module_state->__pyx_tuple__30);
+  Py_CLEAR(clear_module_state->__pyx_tuple__37);
+  Py_CLEAR(clear_module_state->__pyx_tuple__52);
   Py_CLEAR(clear_module_state->__pyx_tuple__68);
   Py_CLEAR(clear_module_state->__pyx_tuple__70);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__23);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__26);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__27);
+  Py_CLEAR(clear_module_state->__pyx_tuple__72);
+  Py_CLEAR(clear_module_state->__pyx_tuple__78);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__25);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__28);
   Py_CLEAR(clear_module_state->__pyx_codeobj__29);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__30);
   Py_CLEAR(clear_module_state->__pyx_codeobj__31);
   Py_CLEAR(clear_module_state->__pyx_codeobj__32);
   Py_CLEAR(clear_module_state->__pyx_codeobj__33);
   Py_CLEAR(clear_module_state->__pyx_codeobj__34);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__35);
   Py_CLEAR(clear_module_state->__pyx_codeobj__36);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__37);
   Py_CLEAR(clear_module_state->__pyx_codeobj__38);
   Py_CLEAR(clear_module_state->__pyx_codeobj__39);
   Py_CLEAR(clear_module_state->__pyx_codeobj__40);
@@ -2900,8 +2931,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_codeobj__47);
   Py_CLEAR(clear_module_state->__pyx_codeobj__48);
   Py_CLEAR(clear_module_state->__pyx_codeobj__49);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__50);
   Py_CLEAR(clear_module_state->__pyx_codeobj__51);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__52);
   Py_CLEAR(clear_module_state->__pyx_codeobj__53);
   Py_CLEAR(clear_module_state->__pyx_codeobj__54);
   Py_CLEAR(clear_module_state->__pyx_codeobj__55);
@@ -2915,13 +2946,16 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_codeobj__63);
   Py_CLEAR(clear_module_state->__pyx_codeobj__64);
   Py_CLEAR(clear_module_state->__pyx_codeobj__65);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__66);
   Py_CLEAR(clear_module_state->__pyx_codeobj__67);
   Py_CLEAR(clear_module_state->__pyx_codeobj__69);
   Py_CLEAR(clear_module_state->__pyx_codeobj__71);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__72);
   Py_CLEAR(clear_module_state->__pyx_codeobj__73);
   Py_CLEAR(clear_module_state->__pyx_codeobj__74);
   Py_CLEAR(clear_module_state->__pyx_codeobj__75);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__76);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__77);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__79);
   return 0;
 }
 #endif
@@ -2943,13 +2977,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
   Py_VISIT(traverse_module_state->__pyx_kp_s_A_class_to_represent_dual_numbe);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Both_real_and_dual_parts_must_be);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Cannot_divide_by_Infinity);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Cannot_divide_by_NaN);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Cannot_divide_by_a_dual_number_c);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Cannot_divide_by_a_dual_number_c_2);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Division_by_zero);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Division_by_zero_in_the_real_par);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Both_real_and_dual_parts_must_be);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Cannot_divide_by_Infinity);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Cannot_divide_by_NaN);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Cannot_divide_by_a_dual_number_c);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Cannot_divide_by_a_dual_number_c_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Division_by_zero);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Division_by_zero_in_the_real_par);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Dual);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual___add);
@@ -2997,31 +3031,33 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual_tan);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual_tanh);
   Py_VISIT(traverse_module_state->__pyx_n_s_Dual_to_dict);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Exponential_function_undefined_f);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Logarithm_undefined_for_non_posi);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Exponential_function_undefined_f);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Logarithm_undefined_for_non_posi);
   Py_VISIT(traverse_module_state->__pyx_n_s_NotImplemented);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Power_undefined_for_non_positive);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Real_or_dual_part_cannot_be_Infi);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Real_or_dual_part_cannot_be_NaN);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Square_root_undefined_for_negati);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Tangent_undefined_at_odd_multipl);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Power_undefined_for_non_integer);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Power_undefined_for_non_positive);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Power_undefined_for_non_positive_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Real_or_dual_part_cannot_be_Infi);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Real_or_dual_part_cannot_be_NaN);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Square_root_undefined_for_negati);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Tangent_undefined_at_odd_multipl);
   Py_VISIT(traverse_module_state->__pyx_n_s_TypeError);
   Py_VISIT(traverse_module_state->__pyx_n_s_ValueError);
   Py_VISIT(traverse_module_state->__pyx_n_s_ZeroDivisionError);
-  Py_VISIT(traverse_module_state->__pyx_n_s__21);
+  Py_VISIT(traverse_module_state->__pyx_n_s__23);
   Py_VISIT(traverse_module_state->__pyx_kp_u__4);
   Py_VISIT(traverse_module_state->__pyx_kp_u__5);
   Py_VISIT(traverse_module_state->__pyx_kp_u__6);
   Py_VISIT(traverse_module_state->__pyx_n_u__7);
-  Py_VISIT(traverse_module_state->__pyx_n_s__76);
+  Py_VISIT(traverse_module_state->__pyx_n_s__80);
   Py_VISIT(traverse_module_state->__pyx_n_s_abs);
   Py_VISIT(traverse_module_state->__pyx_n_s_acosh);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_acosh_undefined_for_real_part_le);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_acosh_undefined_for_real_part_le);
   Py_VISIT(traverse_module_state->__pyx_n_s_add);
   Py_VISIT(traverse_module_state->__pyx_n_s_asinh);
   Py_VISIT(traverse_module_state->__pyx_n_s_asyncio_coroutines);
   Py_VISIT(traverse_module_state->__pyx_n_s_atanh);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_atanh_undefined_for_absolute_rea);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_atanh_undefined_for_absolute_rea);
   Py_VISIT(traverse_module_state->__pyx_n_s_ceil);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
   Py_VISIT(traverse_module_state->__pyx_n_s_cls);
@@ -3030,16 +3066,20 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_cosh);
   Py_VISIT(traverse_module_state->__pyx_n_s_data);
   Py_VISIT(traverse_module_state->__pyx_n_s_dict);
+  Py_VISIT(traverse_module_state->__pyx_n_s_differentiate);
   Py_VISIT(traverse_module_state->__pyx_n_s_doc);
   Py_VISIT(traverse_module_state->__pyx_n_s_dual);
+  Py_VISIT(traverse_module_state->__pyx_n_u_dual);
   Py_VISIT(traverse_module_state->__pyx_n_s_dual_autodiff_cython_dual);
   Py_VISIT(traverse_module_state->__pyx_kp_s_dual_autodiff_cython_dual_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_dual_part);
+  Py_VISIT(traverse_module_state->__pyx_n_s_dual_x);
   Py_VISIT(traverse_module_state->__pyx_n_s_eq);
   Py_VISIT(traverse_module_state->__pyx_n_s_exp);
   Py_VISIT(traverse_module_state->__pyx_n_s_floor);
   Py_VISIT(traverse_module_state->__pyx_n_s_floordiv);
   Py_VISIT(traverse_module_state->__pyx_n_s_from_dict);
+  Py_VISIT(traverse_module_state->__pyx_n_s_func);
   Py_VISIT(traverse_module_state->__pyx_n_s_ge);
   Py_VISIT(traverse_module_state->__pyx_n_s_gt);
   Py_VISIT(traverse_module_state->__pyx_n_s_import);
@@ -3071,8 +3111,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_qualname);
   Py_VISIT(traverse_module_state->__pyx_n_s_radd);
   Py_VISIT(traverse_module_state->__pyx_n_s_real);
+  Py_VISIT(traverse_module_state->__pyx_n_u_real);
   Py_VISIT(traverse_module_state->__pyx_n_s_real_part);
   Py_VISIT(traverse_module_state->__pyx_n_s_repr);
+  Py_VISIT(traverse_module_state->__pyx_n_s_result);
   Py_VISIT(traverse_module_state->__pyx_n_s_rfloordiv);
   Py_VISIT(traverse_module_state->__pyx_n_s_rmul);
   Py_VISIT(traverse_module_state->__pyx_n_s_round);
@@ -3094,6 +3136,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_to_dict);
   Py_VISIT(traverse_module_state->__pyx_n_s_truediv);
+  Py_VISIT(traverse_module_state->__pyx_n_s_x);
   Py_VISIT(traverse_module_state->__pyx_float_0_0);
   Py_VISIT(traverse_module_state->__pyx_int_0);
   Py_VISIT(traverse_module_state->__pyx_int_1);
@@ -3114,26 +3157,27 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_tuple__18);
   Py_VISIT(traverse_module_state->__pyx_tuple__19);
   Py_VISIT(traverse_module_state->__pyx_tuple__20);
+  Py_VISIT(traverse_module_state->__pyx_tuple__21);
   Py_VISIT(traverse_module_state->__pyx_tuple__22);
   Py_VISIT(traverse_module_state->__pyx_tuple__24);
-  Py_VISIT(traverse_module_state->__pyx_tuple__25);
-  Py_VISIT(traverse_module_state->__pyx_tuple__28);
-  Py_VISIT(traverse_module_state->__pyx_tuple__35);
-  Py_VISIT(traverse_module_state->__pyx_tuple__50);
-  Py_VISIT(traverse_module_state->__pyx_tuple__66);
+  Py_VISIT(traverse_module_state->__pyx_tuple__26);
+  Py_VISIT(traverse_module_state->__pyx_tuple__27);
+  Py_VISIT(traverse_module_state->__pyx_tuple__30);
+  Py_VISIT(traverse_module_state->__pyx_tuple__37);
+  Py_VISIT(traverse_module_state->__pyx_tuple__52);
   Py_VISIT(traverse_module_state->__pyx_tuple__68);
   Py_VISIT(traverse_module_state->__pyx_tuple__70);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__23);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__26);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__27);
+  Py_VISIT(traverse_module_state->__pyx_tuple__72);
+  Py_VISIT(traverse_module_state->__pyx_tuple__78);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__25);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__28);
   Py_VISIT(traverse_module_state->__pyx_codeobj__29);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__30);
   Py_VISIT(traverse_module_state->__pyx_codeobj__31);
   Py_VISIT(traverse_module_state->__pyx_codeobj__32);
   Py_VISIT(traverse_module_state->__pyx_codeobj__33);
   Py_VISIT(traverse_module_state->__pyx_codeobj__34);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__35);
   Py_VISIT(traverse_module_state->__pyx_codeobj__36);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__37);
   Py_VISIT(traverse_module_state->__pyx_codeobj__38);
   Py_VISIT(traverse_module_state->__pyx_codeobj__39);
   Py_VISIT(traverse_module_state->__pyx_codeobj__40);
@@ -3146,8 +3190,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_codeobj__47);
   Py_VISIT(traverse_module_state->__pyx_codeobj__48);
   Py_VISIT(traverse_module_state->__pyx_codeobj__49);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__50);
   Py_VISIT(traverse_module_state->__pyx_codeobj__51);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__52);
   Py_VISIT(traverse_module_state->__pyx_codeobj__53);
   Py_VISIT(traverse_module_state->__pyx_codeobj__54);
   Py_VISIT(traverse_module_state->__pyx_codeobj__55);
@@ -3161,13 +3205,16 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_codeobj__63);
   Py_VISIT(traverse_module_state->__pyx_codeobj__64);
   Py_VISIT(traverse_module_state->__pyx_codeobj__65);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__66);
   Py_VISIT(traverse_module_state->__pyx_codeobj__67);
   Py_VISIT(traverse_module_state->__pyx_codeobj__69);
   Py_VISIT(traverse_module_state->__pyx_codeobj__71);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__72);
   Py_VISIT(traverse_module_state->__pyx_codeobj__73);
   Py_VISIT(traverse_module_state->__pyx_codeobj__74);
   Py_VISIT(traverse_module_state->__pyx_codeobj__75);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__76);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__77);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__79);
   return 0;
 }
 #endif
@@ -3199,13 +3246,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #if CYTHON_USE_MODULE_STATE
 #endif
 #define __pyx_kp_s_A_class_to_represent_dual_numbe __pyx_mstate_global->__pyx_kp_s_A_class_to_represent_dual_numbe
-#define __pyx_kp_s_Both_real_and_dual_parts_must_be __pyx_mstate_global->__pyx_kp_s_Both_real_and_dual_parts_must_be
-#define __pyx_kp_s_Cannot_divide_by_Infinity __pyx_mstate_global->__pyx_kp_s_Cannot_divide_by_Infinity
-#define __pyx_kp_s_Cannot_divide_by_NaN __pyx_mstate_global->__pyx_kp_s_Cannot_divide_by_NaN
-#define __pyx_kp_s_Cannot_divide_by_a_dual_number_c __pyx_mstate_global->__pyx_kp_s_Cannot_divide_by_a_dual_number_c
-#define __pyx_kp_s_Cannot_divide_by_a_dual_number_c_2 __pyx_mstate_global->__pyx_kp_s_Cannot_divide_by_a_dual_number_c_2
-#define __pyx_kp_s_Division_by_zero __pyx_mstate_global->__pyx_kp_s_Division_by_zero
-#define __pyx_kp_s_Division_by_zero_in_the_real_par __pyx_mstate_global->__pyx_kp_s_Division_by_zero_in_the_real_par
+#define __pyx_kp_u_Both_real_and_dual_parts_must_be __pyx_mstate_global->__pyx_kp_u_Both_real_and_dual_parts_must_be
+#define __pyx_kp_u_Cannot_divide_by_Infinity __pyx_mstate_global->__pyx_kp_u_Cannot_divide_by_Infinity
+#define __pyx_kp_u_Cannot_divide_by_NaN __pyx_mstate_global->__pyx_kp_u_Cannot_divide_by_NaN
+#define __pyx_kp_u_Cannot_divide_by_a_dual_number_c __pyx_mstate_global->__pyx_kp_u_Cannot_divide_by_a_dual_number_c
+#define __pyx_kp_u_Cannot_divide_by_a_dual_number_c_2 __pyx_mstate_global->__pyx_kp_u_Cannot_divide_by_a_dual_number_c_2
+#define __pyx_kp_u_Division_by_zero __pyx_mstate_global->__pyx_kp_u_Division_by_zero
+#define __pyx_kp_u_Division_by_zero_in_the_real_par __pyx_mstate_global->__pyx_kp_u_Division_by_zero_in_the_real_par
 #define __pyx_kp_u_Dual __pyx_mstate_global->__pyx_kp_u_Dual
 #define __pyx_n_s_Dual_2 __pyx_mstate_global->__pyx_n_s_Dual_2
 #define __pyx_n_s_Dual___add __pyx_mstate_global->__pyx_n_s_Dual___add
@@ -3253,31 +3300,33 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_Dual_tan __pyx_mstate_global->__pyx_n_s_Dual_tan
 #define __pyx_n_s_Dual_tanh __pyx_mstate_global->__pyx_n_s_Dual_tanh
 #define __pyx_n_s_Dual_to_dict __pyx_mstate_global->__pyx_n_s_Dual_to_dict
-#define __pyx_kp_s_Exponential_function_undefined_f __pyx_mstate_global->__pyx_kp_s_Exponential_function_undefined_f
-#define __pyx_kp_s_Logarithm_undefined_for_non_posi __pyx_mstate_global->__pyx_kp_s_Logarithm_undefined_for_non_posi
+#define __pyx_kp_u_Exponential_function_undefined_f __pyx_mstate_global->__pyx_kp_u_Exponential_function_undefined_f
+#define __pyx_kp_u_Logarithm_undefined_for_non_posi __pyx_mstate_global->__pyx_kp_u_Logarithm_undefined_for_non_posi
 #define __pyx_n_s_NotImplemented __pyx_mstate_global->__pyx_n_s_NotImplemented
-#define __pyx_kp_s_Power_undefined_for_non_positive __pyx_mstate_global->__pyx_kp_s_Power_undefined_for_non_positive
-#define __pyx_kp_s_Real_or_dual_part_cannot_be_Infi __pyx_mstate_global->__pyx_kp_s_Real_or_dual_part_cannot_be_Infi
-#define __pyx_kp_s_Real_or_dual_part_cannot_be_NaN __pyx_mstate_global->__pyx_kp_s_Real_or_dual_part_cannot_be_NaN
-#define __pyx_kp_s_Square_root_undefined_for_negati __pyx_mstate_global->__pyx_kp_s_Square_root_undefined_for_negati
-#define __pyx_kp_s_Tangent_undefined_at_odd_multipl __pyx_mstate_global->__pyx_kp_s_Tangent_undefined_at_odd_multipl
+#define __pyx_kp_u_Power_undefined_for_non_integer __pyx_mstate_global->__pyx_kp_u_Power_undefined_for_non_integer
+#define __pyx_kp_u_Power_undefined_for_non_positive __pyx_mstate_global->__pyx_kp_u_Power_undefined_for_non_positive
+#define __pyx_kp_u_Power_undefined_for_non_positive_2 __pyx_mstate_global->__pyx_kp_u_Power_undefined_for_non_positive_2
+#define __pyx_kp_u_Real_or_dual_part_cannot_be_Infi __pyx_mstate_global->__pyx_kp_u_Real_or_dual_part_cannot_be_Infi
+#define __pyx_kp_u_Real_or_dual_part_cannot_be_NaN __pyx_mstate_global->__pyx_kp_u_Real_or_dual_part_cannot_be_NaN
+#define __pyx_kp_u_Square_root_undefined_for_negati __pyx_mstate_global->__pyx_kp_u_Square_root_undefined_for_negati
+#define __pyx_kp_u_Tangent_undefined_at_odd_multipl __pyx_mstate_global->__pyx_kp_u_Tangent_undefined_at_odd_multipl
 #define __pyx_n_s_TypeError __pyx_mstate_global->__pyx_n_s_TypeError
 #define __pyx_n_s_ValueError __pyx_mstate_global->__pyx_n_s_ValueError
 #define __pyx_n_s_ZeroDivisionError __pyx_mstate_global->__pyx_n_s_ZeroDivisionError
-#define __pyx_n_s__21 __pyx_mstate_global->__pyx_n_s__21
+#define __pyx_n_s__23 __pyx_mstate_global->__pyx_n_s__23
 #define __pyx_kp_u__4 __pyx_mstate_global->__pyx_kp_u__4
 #define __pyx_kp_u__5 __pyx_mstate_global->__pyx_kp_u__5
 #define __pyx_kp_u__6 __pyx_mstate_global->__pyx_kp_u__6
 #define __pyx_n_u__7 __pyx_mstate_global->__pyx_n_u__7
-#define __pyx_n_s__76 __pyx_mstate_global->__pyx_n_s__76
+#define __pyx_n_s__80 __pyx_mstate_global->__pyx_n_s__80
 #define __pyx_n_s_abs __pyx_mstate_global->__pyx_n_s_abs
 #define __pyx_n_s_acosh __pyx_mstate_global->__pyx_n_s_acosh
-#define __pyx_kp_s_acosh_undefined_for_real_part_le __pyx_mstate_global->__pyx_kp_s_acosh_undefined_for_real_part_le
+#define __pyx_kp_u_acosh_undefined_for_real_part_le __pyx_mstate_global->__pyx_kp_u_acosh_undefined_for_real_part_le
 #define __pyx_n_s_add __pyx_mstate_global->__pyx_n_s_add
 #define __pyx_n_s_asinh __pyx_mstate_global->__pyx_n_s_asinh
 #define __pyx_n_s_asyncio_coroutines __pyx_mstate_global->__pyx_n_s_asyncio_coroutines
 #define __pyx_n_s_atanh __pyx_mstate_global->__pyx_n_s_atanh
-#define __pyx_kp_s_atanh_undefined_for_absolute_rea __pyx_mstate_global->__pyx_kp_s_atanh_undefined_for_absolute_rea
+#define __pyx_kp_u_atanh_undefined_for_absolute_rea __pyx_mstate_global->__pyx_kp_u_atanh_undefined_for_absolute_rea
 #define __pyx_n_s_ceil __pyx_mstate_global->__pyx_n_s_ceil
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
 #define __pyx_n_s_cls __pyx_mstate_global->__pyx_n_s_cls
@@ -3286,16 +3335,20 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_cosh __pyx_mstate_global->__pyx_n_s_cosh
 #define __pyx_n_s_data __pyx_mstate_global->__pyx_n_s_data
 #define __pyx_n_s_dict __pyx_mstate_global->__pyx_n_s_dict
+#define __pyx_n_s_differentiate __pyx_mstate_global->__pyx_n_s_differentiate
 #define __pyx_n_s_doc __pyx_mstate_global->__pyx_n_s_doc
 #define __pyx_n_s_dual __pyx_mstate_global->__pyx_n_s_dual
+#define __pyx_n_u_dual __pyx_mstate_global->__pyx_n_u_dual
 #define __pyx_n_s_dual_autodiff_cython_dual __pyx_mstate_global->__pyx_n_s_dual_autodiff_cython_dual
 #define __pyx_kp_s_dual_autodiff_cython_dual_pyx __pyx_mstate_global->__pyx_kp_s_dual_autodiff_cython_dual_pyx
 #define __pyx_n_s_dual_part __pyx_mstate_global->__pyx_n_s_dual_part
+#define __pyx_n_s_dual_x __pyx_mstate_global->__pyx_n_s_dual_x
 #define __pyx_n_s_eq __pyx_mstate_global->__pyx_n_s_eq
 #define __pyx_n_s_exp __pyx_mstate_global->__pyx_n_s_exp
 #define __pyx_n_s_floor __pyx_mstate_global->__pyx_n_s_floor
 #define __pyx_n_s_floordiv __pyx_mstate_global->__pyx_n_s_floordiv
 #define __pyx_n_s_from_dict __pyx_mstate_global->__pyx_n_s_from_dict
+#define __pyx_n_s_func __pyx_mstate_global->__pyx_n_s_func
 #define __pyx_n_s_ge __pyx_mstate_global->__pyx_n_s_ge
 #define __pyx_n_s_gt __pyx_mstate_global->__pyx_n_s_gt
 #define __pyx_n_s_import __pyx_mstate_global->__pyx_n_s_import
@@ -3327,8 +3380,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_qualname __pyx_mstate_global->__pyx_n_s_qualname
 #define __pyx_n_s_radd __pyx_mstate_global->__pyx_n_s_radd
 #define __pyx_n_s_real __pyx_mstate_global->__pyx_n_s_real
+#define __pyx_n_u_real __pyx_mstate_global->__pyx_n_u_real
 #define __pyx_n_s_real_part __pyx_mstate_global->__pyx_n_s_real_part
 #define __pyx_n_s_repr __pyx_mstate_global->__pyx_n_s_repr
+#define __pyx_n_s_result __pyx_mstate_global->__pyx_n_s_result
 #define __pyx_n_s_rfloordiv __pyx_mstate_global->__pyx_n_s_rfloordiv
 #define __pyx_n_s_rmul __pyx_mstate_global->__pyx_n_s_rmul
 #define __pyx_n_s_round __pyx_mstate_global->__pyx_n_s_round
@@ -3350,6 +3405,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_to_dict __pyx_mstate_global->__pyx_n_s_to_dict
 #define __pyx_n_s_truediv __pyx_mstate_global->__pyx_n_s_truediv
+#define __pyx_n_s_x __pyx_mstate_global->__pyx_n_s_x
 #define __pyx_float_0_0 __pyx_mstate_global->__pyx_float_0_0
 #define __pyx_int_0 __pyx_mstate_global->__pyx_int_0
 #define __pyx_int_1 __pyx_mstate_global->__pyx_int_1
@@ -3370,26 +3426,27 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_tuple__18 __pyx_mstate_global->__pyx_tuple__18
 #define __pyx_tuple__19 __pyx_mstate_global->__pyx_tuple__19
 #define __pyx_tuple__20 __pyx_mstate_global->__pyx_tuple__20
+#define __pyx_tuple__21 __pyx_mstate_global->__pyx_tuple__21
 #define __pyx_tuple__22 __pyx_mstate_global->__pyx_tuple__22
 #define __pyx_tuple__24 __pyx_mstate_global->__pyx_tuple__24
-#define __pyx_tuple__25 __pyx_mstate_global->__pyx_tuple__25
-#define __pyx_tuple__28 __pyx_mstate_global->__pyx_tuple__28
-#define __pyx_tuple__35 __pyx_mstate_global->__pyx_tuple__35
-#define __pyx_tuple__50 __pyx_mstate_global->__pyx_tuple__50
-#define __pyx_tuple__66 __pyx_mstate_global->__pyx_tuple__66
+#define __pyx_tuple__26 __pyx_mstate_global->__pyx_tuple__26
+#define __pyx_tuple__27 __pyx_mstate_global->__pyx_tuple__27
+#define __pyx_tuple__30 __pyx_mstate_global->__pyx_tuple__30
+#define __pyx_tuple__37 __pyx_mstate_global->__pyx_tuple__37
+#define __pyx_tuple__52 __pyx_mstate_global->__pyx_tuple__52
 #define __pyx_tuple__68 __pyx_mstate_global->__pyx_tuple__68
 #define __pyx_tuple__70 __pyx_mstate_global->__pyx_tuple__70
-#define __pyx_codeobj__23 __pyx_mstate_global->__pyx_codeobj__23
-#define __pyx_codeobj__26 __pyx_mstate_global->__pyx_codeobj__26
-#define __pyx_codeobj__27 __pyx_mstate_global->__pyx_codeobj__27
+#define __pyx_tuple__72 __pyx_mstate_global->__pyx_tuple__72
+#define __pyx_tuple__78 __pyx_mstate_global->__pyx_tuple__78
+#define __pyx_codeobj__25 __pyx_mstate_global->__pyx_codeobj__25
+#define __pyx_codeobj__28 __pyx_mstate_global->__pyx_codeobj__28
 #define __pyx_codeobj__29 __pyx_mstate_global->__pyx_codeobj__29
-#define __pyx_codeobj__30 __pyx_mstate_global->__pyx_codeobj__30
 #define __pyx_codeobj__31 __pyx_mstate_global->__pyx_codeobj__31
 #define __pyx_codeobj__32 __pyx_mstate_global->__pyx_codeobj__32
 #define __pyx_codeobj__33 __pyx_mstate_global->__pyx_codeobj__33
 #define __pyx_codeobj__34 __pyx_mstate_global->__pyx_codeobj__34
+#define __pyx_codeobj__35 __pyx_mstate_global->__pyx_codeobj__35
 #define __pyx_codeobj__36 __pyx_mstate_global->__pyx_codeobj__36
-#define __pyx_codeobj__37 __pyx_mstate_global->__pyx_codeobj__37
 #define __pyx_codeobj__38 __pyx_mstate_global->__pyx_codeobj__38
 #define __pyx_codeobj__39 __pyx_mstate_global->__pyx_codeobj__39
 #define __pyx_codeobj__40 __pyx_mstate_global->__pyx_codeobj__40
@@ -3402,8 +3459,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__47 __pyx_mstate_global->__pyx_codeobj__47
 #define __pyx_codeobj__48 __pyx_mstate_global->__pyx_codeobj__48
 #define __pyx_codeobj__49 __pyx_mstate_global->__pyx_codeobj__49
+#define __pyx_codeobj__50 __pyx_mstate_global->__pyx_codeobj__50
 #define __pyx_codeobj__51 __pyx_mstate_global->__pyx_codeobj__51
-#define __pyx_codeobj__52 __pyx_mstate_global->__pyx_codeobj__52
 #define __pyx_codeobj__53 __pyx_mstate_global->__pyx_codeobj__53
 #define __pyx_codeobj__54 __pyx_mstate_global->__pyx_codeobj__54
 #define __pyx_codeobj__55 __pyx_mstate_global->__pyx_codeobj__55
@@ -3417,13 +3474,16 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__63 __pyx_mstate_global->__pyx_codeobj__63
 #define __pyx_codeobj__64 __pyx_mstate_global->__pyx_codeobj__64
 #define __pyx_codeobj__65 __pyx_mstate_global->__pyx_codeobj__65
+#define __pyx_codeobj__66 __pyx_mstate_global->__pyx_codeobj__66
 #define __pyx_codeobj__67 __pyx_mstate_global->__pyx_codeobj__67
 #define __pyx_codeobj__69 __pyx_mstate_global->__pyx_codeobj__69
 #define __pyx_codeobj__71 __pyx_mstate_global->__pyx_codeobj__71
-#define __pyx_codeobj__72 __pyx_mstate_global->__pyx_codeobj__72
 #define __pyx_codeobj__73 __pyx_mstate_global->__pyx_codeobj__73
 #define __pyx_codeobj__74 __pyx_mstate_global->__pyx_codeobj__74
 #define __pyx_codeobj__75 __pyx_mstate_global->__pyx_codeobj__75
+#define __pyx_codeobj__76 __pyx_mstate_global->__pyx_codeobj__76
+#define __pyx_codeobj__77 __pyx_mstate_global->__pyx_codeobj__77
+#define __pyx_codeobj__79 __pyx_mstate_global->__pyx_codeobj__79
 /* #### Code section: module_code ### */
 
 /* "dual_autodiff_cython/dual.pyx":18
@@ -7985,7 +8045,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_20dual_autodiff_cython_4dual_4Dual_26__pow__, "\n        Raise a dual number to the power of another dual number or a scalar.\n\n        :param other: A Dual object or a scalar (int or float).\n        :return: A new Dual object representing the result.\n        :raises ValueError: If the base is non-positive for real exponent.\n        ");
+PyDoc_STRVAR(__pyx_doc_20dual_autodiff_cython_4dual_4Dual_26__pow__, "\n        Raise a dual number to the power of another dual number or a scalar.\n\n        :param other: A Dual object or a scalar (int or float).\n        :return: A new Dual object representing the result.\n        :raises ValueError: If the base is non-positive and the exponent is not an integer.\n        ");
 static PyMethodDef __pyx_mdef_20dual_autodiff_cython_4dual_4Dual_27__pow__ = {"__pow__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_20dual_autodiff_cython_4dual_4Dual_27__pow__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_20dual_autodiff_cython_4dual_4Dual_26__pow__};
 static PyObject *__pyx_pw_20dual_autodiff_cython_4dual_4Dual_27__pow__(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
@@ -8102,17 +8162,18 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
   PyObject *__pyx_t_6 = NULL;
   unsigned int __pyx_t_7;
   int __pyx_t_8;
+  int __pyx_t_9;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__pow__", 1);
 
   /* "dual_autodiff_cython/dual.pyx":217
- *         :raises ValueError: If the base is non-positive for real exponent.
+ *         :raises ValueError: If the base is non-positive and the exponent is not an integer.
  *         """
  *         if isinstance(other, Dual):             # <<<<<<<<<<<<<<
  *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Dual_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -8124,7 +8185,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
  *         """
  *         if isinstance(other, Dual):
  *             if self.real <= 0:             # <<<<<<<<<<<<<<
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")
  *             real_part = self.real ** other.real
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
@@ -8138,7 +8199,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
       /* "dual_autodiff_cython/dual.pyx":219
  *         if isinstance(other, Dual):
  *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")             # <<<<<<<<<<<<<<
  *             real_part = self.real ** other.real
  *             dual_part = real_part * (
  */
@@ -8152,14 +8213,14 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
  *         """
  *         if isinstance(other, Dual):
  *             if self.real <= 0:             # <<<<<<<<<<<<<<
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")
  *             real_part = self.real ** other.real
  */
     }
 
     /* "dual_autodiff_cython/dual.pyx":220
  *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")
  *             real_part = self.real ** other.real             # <<<<<<<<<<<<<<
  *             dual_part = real_part * (
  *                 other.real * self.dual / self.real +
@@ -8254,7 +8315,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "dual_autodiff_cython/dual.pyx":221
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")
  *             real_part = self.real ** other.real
  *             dual_part = real_part * (             # <<<<<<<<<<<<<<
  *                 other.real * self.dual / self.real +
@@ -8271,7 +8332,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
  *             )
  *             return Dual(real_part, dual_part)             # <<<<<<<<<<<<<<
  *         elif isinstance(other, (int, float)):
- *             if self.real <= 0:
+ *             if self.real < 0 and not isinstance(other, int):
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Dual_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 225, __pyx_L1_error)
@@ -8303,11 +8364,11 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
     goto __pyx_L0;
 
     /* "dual_autodiff_cython/dual.pyx":217
- *         :raises ValueError: If the base is non-positive for real exponent.
+ *         :raises ValueError: If the base is non-positive and the exponent is not an integer.
  *         """
  *         if isinstance(other, Dual):             # <<<<<<<<<<<<<<
  *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")
  */
   }
 
@@ -8315,8 +8376,8 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
  *             )
  *             return Dual(real_part, dual_part)
  *         elif isinstance(other, (int, float)):             # <<<<<<<<<<<<<<
- *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *             if self.real < 0 and not isinstance(other, int):
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")
  */
   __pyx_t_8 = PyInt_Check(__pyx_v_other); 
   if (!__pyx_t_8) {
@@ -8332,26 +8393,35 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
     /* "dual_autodiff_cython/dual.pyx":227
  *             return Dual(real_part, dual_part)
  *         elif isinstance(other, (int, float)):
- *             if self.real <= 0:             # <<<<<<<<<<<<<<
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *             if self.real < 0 and not isinstance(other, int):             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")
  *             real_part = self.real ** other
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (__pyx_t_8) {
+    } else {
+      __pyx_t_2 = __pyx_t_8;
+      goto __pyx_L8_bool_binop_done;
+    }
+    __pyx_t_8 = PyInt_Check(__pyx_v_other); 
+    __pyx_t_9 = (!__pyx_t_8);
+    __pyx_t_2 = __pyx_t_9;
+    __pyx_L8_bool_binop_done:;
     if (unlikely(__pyx_t_2)) {
 
       /* "dual_autodiff_cython/dual.pyx":228
  *         elif isinstance(other, (int, float)):
- *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")             # <<<<<<<<<<<<<<
+ *             if self.real < 0 and not isinstance(other, int):
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")             # <<<<<<<<<<<<<<
  *             real_part = self.real ** other
- *             dual_part = other * (self.real ** (other - 1)) * self.dual
+ *             dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -8360,17 +8430,17 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
       /* "dual_autodiff_cython/dual.pyx":227
  *             return Dual(real_part, dual_part)
  *         elif isinstance(other, (int, float)):
- *             if self.real <= 0:             # <<<<<<<<<<<<<<
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *             if self.real < 0 and not isinstance(other, int):             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")
  *             real_part = self.real ** other
  */
     }
 
     /* "dual_autodiff_cython/dual.pyx":229
- *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *             if self.real < 0 and not isinstance(other, int):
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")
  *             real_part = self.real ** other             # <<<<<<<<<<<<<<
- *             dual_part = other * (self.real ** (other - 1)) * self.dual
+ *             dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual
  *             return Dual(real_part, dual_part)
  */
     __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
@@ -8382,63 +8452,74 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
     __pyx_t_3 = 0;
 
     /* "dual_autodiff_cython/dual.pyx":230
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")
  *             real_part = self.real ** other
- *             dual_part = other * (self.real ** (other - 1)) * self.dual             # <<<<<<<<<<<<<<
+ *             dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual             # <<<<<<<<<<<<<<
  *             return Dual(real_part, dual_part)
  *         return NotImplemented
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 230, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_PyInt_SubtractObjC(__pyx_v_other, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_4 = PyNumber_Power(__pyx_t_3, __pyx_t_5, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_2 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_5, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyNumber_Multiply(__pyx_v_other, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dual); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 230, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (__pyx_t_2) {
+      __Pyx_INCREF(__pyx_int_0);
+      __pyx_t_3 = __pyx_int_0;
+    } else {
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_v_other, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = PyNumber_Power(__pyx_t_5, __pyx_t_4, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_4 = PyNumber_Multiply(__pyx_v_other, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dual); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_5 = PyNumber_Multiply(__pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_3 = __pyx_t_5;
+      __pyx_t_5 = 0;
+    }
     __pyx_v_dual_part = __pyx_t_3;
     __pyx_t_3 = 0;
 
     /* "dual_autodiff_cython/dual.pyx":231
  *             real_part = self.real ** other
- *             dual_part = other * (self.real ** (other - 1)) * self.dual
+ *             dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual
  *             return Dual(real_part, dual_part)             # <<<<<<<<<<<<<<
  *         return NotImplemented
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Dual_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 231, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = NULL;
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Dual_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 231, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = NULL;
     __pyx_t_7 = 0;
     #if CYTHON_UNPACK_METHODS
-    if (unlikely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
+    if (unlikely(PyMethod_Check(__pyx_t_5))) {
+      __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_5);
+      if (likely(__pyx_t_1)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+        __Pyx_INCREF(__pyx_t_1);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_5, function);
         __pyx_t_7 = 1;
       }
     }
     #endif
     {
-      PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_v_real_part, __pyx_v_dual_part};
-      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      PyObject *__pyx_callargs[3] = {__pyx_t_1, __pyx_v_real_part, __pyx_v_dual_part};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -8448,13 +8529,13 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_26__pow__(CYTHON_UN
  *             )
  *             return Dual(real_part, dual_part)
  *         elif isinstance(other, (int, float)):             # <<<<<<<<<<<<<<
- *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")
+ *             if self.real < 0 and not isinstance(other, int):
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")
  */
   }
 
   /* "dual_autodiff_cython/dual.pyx":232
- *             dual_part = other * (self.real ** (other - 1)) * self.dual
+ *             dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual
  *             return Dual(real_part, dual_part)
  *         return NotImplemented             # <<<<<<<<<<<<<<
  * 
@@ -8663,7 +8744,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_28__rpow__(CYTHON_U
  *             real_part = other ** self.real
  *             dual_part = real_part * math.log(other) * self.dual
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 244, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 244, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10799,7 +10880,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_46exp(CYTHON_UNUSED
  *         real_part = math.exp(self.real)
  *         dual_part = real_part * self.dual
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11072,7 +11153,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_48log(CYTHON_UNUSED
  *         real_part = math.log(self.real)
  *         dual_part = self.dual / self.real
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -11348,7 +11429,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_50sqrt(CYTHON_UNUSE
  *         real_part = math.sqrt(self.real)
  *         dual_part = self.dual / (2 * real_part)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -12186,7 +12267,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_56tan(CYTHON_UNUSED
  *         real_part = math.tan(self.real)
  *         dual_part = self.dual / (math.cos(self.real) ** 2)
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13572,7 +13653,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_66acosh(CYTHON_UNUS
  *         real_part = math.acosh(self.real)
  *         dual_part = self.dual / math.sqrt(self.real ** 2 - 1)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 465, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 465, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -13886,7 +13967,7 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_68atanh(CYTHON_UNUS
  *         real_part = math.atanh(self.real)
  *         dual_part = self.dual / (1 - self.real ** 2)
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 478, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 478, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14547,11 +14628,11 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_74to_dict(CYTHON_UN
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 505, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_real, __pyx_t_2) < 0) __PYX_ERR(0, 505, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_real, __pyx_t_2) < 0) __PYX_ERR(0, 505, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dual); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 505, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dual, __pyx_t_2) < 0) __PYX_ERR(0, 505, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_dual, __pyx_t_2) < 0) __PYX_ERR(0, 505, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14719,9 +14800,9 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_76from_dict(CYTHON_
  *     def __round__(self, ndigits=0):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_data, __pyx_n_s_real); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_data, __pyx_n_u_real); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_data, __pyx_n_s_dual); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 515, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_data, __pyx_n_u_dual); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 515, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_cls);
   __pyx_t_4 = __pyx_v_cls; __pyx_t_5 = NULL;
@@ -15928,6 +16009,8 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_88is_negative(CYTHO
  *         :return: True if the real part is negative, False otherwise.
  *         """
  *         return self.real < 0             # <<<<<<<<<<<<<<
+ * 
+ * def differentiate(func, x):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_real); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 564, __pyx_L1_error)
@@ -15958,6 +16041,241 @@ static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_4Dual_88is_negative(CYTHO
   return __pyx_r;
 }
 
+/* "dual_autodiff_cython/dual.pyx":566
+ *         return self.real < 0
+ * 
+ * def differentiate(func, x):             # <<<<<<<<<<<<<<
+ *     """
+ *     Compute the first derivative of a function using dual numbers.
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_20dual_autodiff_cython_4dual_1differentiate(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+PyDoc_STRVAR(__pyx_doc_20dual_autodiff_cython_4dual_differentiate, "\n    Compute the first derivative of a function using dual numbers.\n\n    :param func: The function to differentiate.\n    :param x: The point at which to compute the derivative.\n    :return: The derivative of the function at x.\n    ");
+static PyMethodDef __pyx_mdef_20dual_autodiff_cython_4dual_1differentiate = {"differentiate", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_20dual_autodiff_cython_4dual_1differentiate, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_20dual_autodiff_cython_4dual_differentiate};
+static PyObject *__pyx_pw_20dual_autodiff_cython_4dual_1differentiate(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_func = 0;
+  PyObject *__pyx_v_x = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[2] = {0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("differentiate (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_func,&__pyx_n_s_x,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_func)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 566, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_x)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 566, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("differentiate", 1, 2, 2, 1); __PYX_ERR(0, 566, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "differentiate") < 0)) __PYX_ERR(0, 566, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 2)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+      values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+    }
+    __pyx_v_func = values[0];
+    __pyx_v_x = values[1];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("differentiate", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 566, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("dual_autodiff_cython.dual.differentiate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_20dual_autodiff_cython_4dual_differentiate(__pyx_self, __pyx_v_func, __pyx_v_x);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_20dual_autodiff_cython_4dual_differentiate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_func, PyObject *__pyx_v_x) {
+  PyObject *__pyx_v_dual_x = NULL;
+  PyObject *__pyx_v_result = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  unsigned int __pyx_t_4;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("differentiate", 1);
+
+  /* "dual_autodiff_cython/dual.pyx":574
+ *     :return: The derivative of the function at x.
+ *     """
+ *     dual_x = Dual(x, 1)  # Convert x into a Dual number             # <<<<<<<<<<<<<<
+ *     result = func(dual_x)  # Evaluate the function with the Dual number
+ *     return result.dual  # Extract the derivative (dual part)
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Dual_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 574, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_x, __pyx_int_1};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 574, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __pyx_v_dual_x = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "dual_autodiff_cython/dual.pyx":575
+ *     """
+ *     dual_x = Dual(x, 1)  # Convert x into a Dual number
+ *     result = func(dual_x)  # Evaluate the function with the Dual number             # <<<<<<<<<<<<<<
+ *     return result.dual  # Extract the derivative (dual part)
+ */
+  __Pyx_INCREF(__pyx_v_func);
+  __pyx_t_2 = __pyx_v_func; __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_dual_x};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 575, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __pyx_v_result = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "dual_autodiff_cython/dual.pyx":576
+ *     dual_x = Dual(x, 1)  # Convert x into a Dual number
+ *     result = func(dual_x)  # Evaluate the function with the Dual number
+ *     return result.dual  # Extract the derivative (dual part)             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_n_s_dual); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 576, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "dual_autodiff_cython/dual.pyx":566
+ *         return self.real < 0
+ * 
+ * def differentiate(func, x):             # <<<<<<<<<<<<<<
+ *     """
+ *     Compute the first derivative of a function using dual numbers.
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("dual_autodiff_cython.dual.differentiate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_dual_x);
+  __Pyx_XDECREF(__pyx_v_result);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 static PyMethodDef __pyx_methods[] = {
   {0, 0, 0, 0}
 };
@@ -15975,13 +16293,13 @@ static PyMethodDef __pyx_methods[] = {
 static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
     {&__pyx_kp_s_A_class_to_represent_dual_numbe, __pyx_k_A_class_to_represent_dual_numbe, sizeof(__pyx_k_A_class_to_represent_dual_numbe), 0, 0, 1, 0},
-    {&__pyx_kp_s_Both_real_and_dual_parts_must_be, __pyx_k_Both_real_and_dual_parts_must_be, sizeof(__pyx_k_Both_real_and_dual_parts_must_be), 0, 0, 1, 0},
-    {&__pyx_kp_s_Cannot_divide_by_Infinity, __pyx_k_Cannot_divide_by_Infinity, sizeof(__pyx_k_Cannot_divide_by_Infinity), 0, 0, 1, 0},
-    {&__pyx_kp_s_Cannot_divide_by_NaN, __pyx_k_Cannot_divide_by_NaN, sizeof(__pyx_k_Cannot_divide_by_NaN), 0, 0, 1, 0},
-    {&__pyx_kp_s_Cannot_divide_by_a_dual_number_c, __pyx_k_Cannot_divide_by_a_dual_number_c, sizeof(__pyx_k_Cannot_divide_by_a_dual_number_c), 0, 0, 1, 0},
-    {&__pyx_kp_s_Cannot_divide_by_a_dual_number_c_2, __pyx_k_Cannot_divide_by_a_dual_number_c_2, sizeof(__pyx_k_Cannot_divide_by_a_dual_number_c_2), 0, 0, 1, 0},
-    {&__pyx_kp_s_Division_by_zero, __pyx_k_Division_by_zero, sizeof(__pyx_k_Division_by_zero), 0, 0, 1, 0},
-    {&__pyx_kp_s_Division_by_zero_in_the_real_par, __pyx_k_Division_by_zero_in_the_real_par, sizeof(__pyx_k_Division_by_zero_in_the_real_par), 0, 0, 1, 0},
+    {&__pyx_kp_u_Both_real_and_dual_parts_must_be, __pyx_k_Both_real_and_dual_parts_must_be, sizeof(__pyx_k_Both_real_and_dual_parts_must_be), 0, 1, 0, 0},
+    {&__pyx_kp_u_Cannot_divide_by_Infinity, __pyx_k_Cannot_divide_by_Infinity, sizeof(__pyx_k_Cannot_divide_by_Infinity), 0, 1, 0, 0},
+    {&__pyx_kp_u_Cannot_divide_by_NaN, __pyx_k_Cannot_divide_by_NaN, sizeof(__pyx_k_Cannot_divide_by_NaN), 0, 1, 0, 0},
+    {&__pyx_kp_u_Cannot_divide_by_a_dual_number_c, __pyx_k_Cannot_divide_by_a_dual_number_c, sizeof(__pyx_k_Cannot_divide_by_a_dual_number_c), 0, 1, 0, 0},
+    {&__pyx_kp_u_Cannot_divide_by_a_dual_number_c_2, __pyx_k_Cannot_divide_by_a_dual_number_c_2, sizeof(__pyx_k_Cannot_divide_by_a_dual_number_c_2), 0, 1, 0, 0},
+    {&__pyx_kp_u_Division_by_zero, __pyx_k_Division_by_zero, sizeof(__pyx_k_Division_by_zero), 0, 1, 0, 0},
+    {&__pyx_kp_u_Division_by_zero_in_the_real_par, __pyx_k_Division_by_zero_in_the_real_par, sizeof(__pyx_k_Division_by_zero_in_the_real_par), 0, 1, 0, 0},
     {&__pyx_kp_u_Dual, __pyx_k_Dual, sizeof(__pyx_k_Dual), 0, 1, 0, 0},
     {&__pyx_n_s_Dual_2, __pyx_k_Dual_2, sizeof(__pyx_k_Dual_2), 0, 0, 1, 1},
     {&__pyx_n_s_Dual___add, __pyx_k_Dual___add, sizeof(__pyx_k_Dual___add), 0, 0, 1, 1},
@@ -16029,31 +16347,33 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_Dual_tan, __pyx_k_Dual_tan, sizeof(__pyx_k_Dual_tan), 0, 0, 1, 1},
     {&__pyx_n_s_Dual_tanh, __pyx_k_Dual_tanh, sizeof(__pyx_k_Dual_tanh), 0, 0, 1, 1},
     {&__pyx_n_s_Dual_to_dict, __pyx_k_Dual_to_dict, sizeof(__pyx_k_Dual_to_dict), 0, 0, 1, 1},
-    {&__pyx_kp_s_Exponential_function_undefined_f, __pyx_k_Exponential_function_undefined_f, sizeof(__pyx_k_Exponential_function_undefined_f), 0, 0, 1, 0},
-    {&__pyx_kp_s_Logarithm_undefined_for_non_posi, __pyx_k_Logarithm_undefined_for_non_posi, sizeof(__pyx_k_Logarithm_undefined_for_non_posi), 0, 0, 1, 0},
+    {&__pyx_kp_u_Exponential_function_undefined_f, __pyx_k_Exponential_function_undefined_f, sizeof(__pyx_k_Exponential_function_undefined_f), 0, 1, 0, 0},
+    {&__pyx_kp_u_Logarithm_undefined_for_non_posi, __pyx_k_Logarithm_undefined_for_non_posi, sizeof(__pyx_k_Logarithm_undefined_for_non_posi), 0, 1, 0, 0},
     {&__pyx_n_s_NotImplemented, __pyx_k_NotImplemented, sizeof(__pyx_k_NotImplemented), 0, 0, 1, 1},
-    {&__pyx_kp_s_Power_undefined_for_non_positive, __pyx_k_Power_undefined_for_non_positive, sizeof(__pyx_k_Power_undefined_for_non_positive), 0, 0, 1, 0},
-    {&__pyx_kp_s_Real_or_dual_part_cannot_be_Infi, __pyx_k_Real_or_dual_part_cannot_be_Infi, sizeof(__pyx_k_Real_or_dual_part_cannot_be_Infi), 0, 0, 1, 0},
-    {&__pyx_kp_s_Real_or_dual_part_cannot_be_NaN, __pyx_k_Real_or_dual_part_cannot_be_NaN, sizeof(__pyx_k_Real_or_dual_part_cannot_be_NaN), 0, 0, 1, 0},
-    {&__pyx_kp_s_Square_root_undefined_for_negati, __pyx_k_Square_root_undefined_for_negati, sizeof(__pyx_k_Square_root_undefined_for_negati), 0, 0, 1, 0},
-    {&__pyx_kp_s_Tangent_undefined_at_odd_multipl, __pyx_k_Tangent_undefined_at_odd_multipl, sizeof(__pyx_k_Tangent_undefined_at_odd_multipl), 0, 0, 1, 0},
+    {&__pyx_kp_u_Power_undefined_for_non_integer, __pyx_k_Power_undefined_for_non_integer, sizeof(__pyx_k_Power_undefined_for_non_integer), 0, 1, 0, 0},
+    {&__pyx_kp_u_Power_undefined_for_non_positive, __pyx_k_Power_undefined_for_non_positive, sizeof(__pyx_k_Power_undefined_for_non_positive), 0, 1, 0, 0},
+    {&__pyx_kp_u_Power_undefined_for_non_positive_2, __pyx_k_Power_undefined_for_non_positive_2, sizeof(__pyx_k_Power_undefined_for_non_positive_2), 0, 1, 0, 0},
+    {&__pyx_kp_u_Real_or_dual_part_cannot_be_Infi, __pyx_k_Real_or_dual_part_cannot_be_Infi, sizeof(__pyx_k_Real_or_dual_part_cannot_be_Infi), 0, 1, 0, 0},
+    {&__pyx_kp_u_Real_or_dual_part_cannot_be_NaN, __pyx_k_Real_or_dual_part_cannot_be_NaN, sizeof(__pyx_k_Real_or_dual_part_cannot_be_NaN), 0, 1, 0, 0},
+    {&__pyx_kp_u_Square_root_undefined_for_negati, __pyx_k_Square_root_undefined_for_negati, sizeof(__pyx_k_Square_root_undefined_for_negati), 0, 1, 0, 0},
+    {&__pyx_kp_u_Tangent_undefined_at_odd_multipl, __pyx_k_Tangent_undefined_at_odd_multipl, sizeof(__pyx_k_Tangent_undefined_at_odd_multipl), 0, 1, 0, 0},
     {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
     {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
     {&__pyx_n_s_ZeroDivisionError, __pyx_k_ZeroDivisionError, sizeof(__pyx_k_ZeroDivisionError), 0, 0, 1, 1},
-    {&__pyx_n_s__21, __pyx_k__21, sizeof(__pyx_k__21), 0, 0, 1, 1},
+    {&__pyx_n_s__23, __pyx_k__23, sizeof(__pyx_k__23), 0, 0, 1, 1},
     {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
     {&__pyx_kp_u__5, __pyx_k__5, sizeof(__pyx_k__5), 0, 1, 0, 0},
     {&__pyx_kp_u__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 1, 0, 0},
     {&__pyx_n_u__7, __pyx_k__7, sizeof(__pyx_k__7), 0, 1, 0, 1},
-    {&__pyx_n_s__76, __pyx_k__76, sizeof(__pyx_k__76), 0, 0, 1, 1},
+    {&__pyx_n_s__80, __pyx_k__80, sizeof(__pyx_k__80), 0, 0, 1, 1},
     {&__pyx_n_s_abs, __pyx_k_abs, sizeof(__pyx_k_abs), 0, 0, 1, 1},
     {&__pyx_n_s_acosh, __pyx_k_acosh, sizeof(__pyx_k_acosh), 0, 0, 1, 1},
-    {&__pyx_kp_s_acosh_undefined_for_real_part_le, __pyx_k_acosh_undefined_for_real_part_le, sizeof(__pyx_k_acosh_undefined_for_real_part_le), 0, 0, 1, 0},
+    {&__pyx_kp_u_acosh_undefined_for_real_part_le, __pyx_k_acosh_undefined_for_real_part_le, sizeof(__pyx_k_acosh_undefined_for_real_part_le), 0, 1, 0, 0},
     {&__pyx_n_s_add, __pyx_k_add, sizeof(__pyx_k_add), 0, 0, 1, 1},
     {&__pyx_n_s_asinh, __pyx_k_asinh, sizeof(__pyx_k_asinh), 0, 0, 1, 1},
     {&__pyx_n_s_asyncio_coroutines, __pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 0, 1, 1},
     {&__pyx_n_s_atanh, __pyx_k_atanh, sizeof(__pyx_k_atanh), 0, 0, 1, 1},
-    {&__pyx_kp_s_atanh_undefined_for_absolute_rea, __pyx_k_atanh_undefined_for_absolute_rea, sizeof(__pyx_k_atanh_undefined_for_absolute_rea), 0, 0, 1, 0},
+    {&__pyx_kp_u_atanh_undefined_for_absolute_rea, __pyx_k_atanh_undefined_for_absolute_rea, sizeof(__pyx_k_atanh_undefined_for_absolute_rea), 0, 1, 0, 0},
     {&__pyx_n_s_ceil, __pyx_k_ceil, sizeof(__pyx_k_ceil), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
     {&__pyx_n_s_cls, __pyx_k_cls, sizeof(__pyx_k_cls), 0, 0, 1, 1},
@@ -16062,16 +16382,20 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_cosh, __pyx_k_cosh, sizeof(__pyx_k_cosh), 0, 0, 1, 1},
     {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
     {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
+    {&__pyx_n_s_differentiate, __pyx_k_differentiate, sizeof(__pyx_k_differentiate), 0, 0, 1, 1},
     {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
     {&__pyx_n_s_dual, __pyx_k_dual, sizeof(__pyx_k_dual), 0, 0, 1, 1},
+    {&__pyx_n_u_dual, __pyx_k_dual, sizeof(__pyx_k_dual), 0, 1, 0, 1},
     {&__pyx_n_s_dual_autodiff_cython_dual, __pyx_k_dual_autodiff_cython_dual, sizeof(__pyx_k_dual_autodiff_cython_dual), 0, 0, 1, 1},
     {&__pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_k_dual_autodiff_cython_dual_pyx, sizeof(__pyx_k_dual_autodiff_cython_dual_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_dual_part, __pyx_k_dual_part, sizeof(__pyx_k_dual_part), 0, 0, 1, 1},
+    {&__pyx_n_s_dual_x, __pyx_k_dual_x, sizeof(__pyx_k_dual_x), 0, 0, 1, 1},
     {&__pyx_n_s_eq, __pyx_k_eq, sizeof(__pyx_k_eq), 0, 0, 1, 1},
     {&__pyx_n_s_exp, __pyx_k_exp, sizeof(__pyx_k_exp), 0, 0, 1, 1},
     {&__pyx_n_s_floor, __pyx_k_floor, sizeof(__pyx_k_floor), 0, 0, 1, 1},
     {&__pyx_n_s_floordiv, __pyx_k_floordiv, sizeof(__pyx_k_floordiv), 0, 0, 1, 1},
     {&__pyx_n_s_from_dict, __pyx_k_from_dict, sizeof(__pyx_k_from_dict), 0, 0, 1, 1},
+    {&__pyx_n_s_func, __pyx_k_func, sizeof(__pyx_k_func), 0, 0, 1, 1},
     {&__pyx_n_s_ge, __pyx_k_ge, sizeof(__pyx_k_ge), 0, 0, 1, 1},
     {&__pyx_n_s_gt, __pyx_k_gt, sizeof(__pyx_k_gt), 0, 0, 1, 1},
     {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
@@ -16103,8 +16427,10 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
     {&__pyx_n_s_radd, __pyx_k_radd, sizeof(__pyx_k_radd), 0, 0, 1, 1},
     {&__pyx_n_s_real, __pyx_k_real, sizeof(__pyx_k_real), 0, 0, 1, 1},
+    {&__pyx_n_u_real, __pyx_k_real, sizeof(__pyx_k_real), 0, 1, 0, 1},
     {&__pyx_n_s_real_part, __pyx_k_real_part, sizeof(__pyx_k_real_part), 0, 0, 1, 1},
     {&__pyx_n_s_repr, __pyx_k_repr, sizeof(__pyx_k_repr), 0, 0, 1, 1},
+    {&__pyx_n_s_result, __pyx_k_result, sizeof(__pyx_k_result), 0, 0, 1, 1},
     {&__pyx_n_s_rfloordiv, __pyx_k_rfloordiv, sizeof(__pyx_k_rfloordiv), 0, 0, 1, 1},
     {&__pyx_n_s_rmul, __pyx_k_rmul, sizeof(__pyx_k_rmul), 0, 0, 1, 1},
     {&__pyx_n_s_round, __pyx_k_round, sizeof(__pyx_k_round), 0, 0, 1, 1},
@@ -16126,6 +16452,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_to_dict, __pyx_k_to_dict, sizeof(__pyx_k_to_dict), 0, 0, 1, 1},
     {&__pyx_n_s_truediv, __pyx_k_truediv, sizeof(__pyx_k_truediv), 0, 0, 1, 1},
+    {&__pyx_n_s_x, __pyx_k_x, sizeof(__pyx_k_x), 0, 0, 1, 1},
     {0, 0, 0, 0, 0, 0, 0}
   };
   return __Pyx_InitStrings(__pyx_string_tab);
@@ -16154,7 +16481,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if math.isnan(real) or math.isnan(dual):
  *             raise ValueError("Real or dual part cannot be NaN.")
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Both_real_and_dual_parts_must_be); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_Both_real_and_dual_parts_must_be); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -16165,7 +16492,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if math.isinf(real) or math.isinf(dual):
  *             raise ValueError("Real or dual part cannot be Infinity.")
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Real_or_dual_part_cannot_be_NaN); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_Real_or_dual_part_cannot_be_NaN); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
@@ -16176,7 +16503,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.real = real
  *         self.dual = dual
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Real_or_dual_part_cannot_be_Infi); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_Real_or_dual_part_cannot_be_Infi); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
@@ -16187,7 +16514,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             if math.isinf(other.real) or math.isinf(other.dual):
  *                 raise ValueError("Cannot divide by a dual number containing Infinity.")
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_Cannot_divide_by_a_dual_number_c); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_Cannot_divide_by_a_dual_number_c); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
@@ -16198,7 +16525,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             if other.real == 0:
  *                 raise ZeroDivisionError("Division by zero in the real part.")
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_Cannot_divide_by_a_dual_number_c_2); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_Cannot_divide_by_a_dual_number_c_2); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
@@ -16209,7 +16536,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             real_part = self.real / other.real
  *             dual_part = (self.dual * other.real - self.real * other.dual) / (other.real ** 2)
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_Division_by_zero_in_the_real_par); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_Division_by_zero_in_the_real_par); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
@@ -16220,7 +16547,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             if math.isinf(other):
  *                 raise ValueError("Cannot divide by Infinity.")
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Cannot_divide_by_NaN); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_u_Cannot_divide_by_NaN); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
@@ -16231,7 +16558,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             if other == 0:
  *                 raise ZeroDivisionError("Division by zero.")
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_Cannot_divide_by_Infinity); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_Cannot_divide_by_Infinity); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
@@ -16242,20 +16569,42 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             return Dual(self.real / other, self.dual / other)
  *         return NotImplemented
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Division_by_zero); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_Division_by_zero); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
   /* "dual_autodiff_cython/dual.pyx":219
  *         if isinstance(other, Dual):
  *             if self.real <= 0:
- *                 raise ValueError("Power undefined for non-positive real base.")             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Power undefined for non-positive real base with dual exponent.")             # <<<<<<<<<<<<<<
  *             real_part = self.real ** other.real
  *             dual_part = real_part * (
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Power_undefined_for_non_positive); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_u_Power_undefined_for_non_positive); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
+
+  /* "dual_autodiff_cython/dual.pyx":228
+ *         elif isinstance(other, (int, float)):
+ *             if self.real < 0 and not isinstance(other, int):
+ *                 raise ValueError("Power undefined for non-integer exponent with negative base.")             # <<<<<<<<<<<<<<
+ *             real_part = self.real ** other
+ *             dual_part = 0 if self.real == 0 else other * (self.real ** (other - 1)) * self.dual
+ */
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_u_Power_undefined_for_non_integer); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
+
+  /* "dual_autodiff_cython/dual.pyx":244
+ *         if isinstance(other, (int, float)):
+ *             if other <= 0:
+ *                 raise ValueError("Power undefined for non-positive real base.")             # <<<<<<<<<<<<<<
+ *             real_part = other ** self.real
+ *             dual_part = real_part * math.log(other) * self.dual
+ */
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_u_Power_undefined_for_non_positive_2); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 244, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "dual_autodiff_cython/dual.pyx":348
  *         """
@@ -16264,9 +16613,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         real_part = math.exp(self.real)
  *         dual_part = real_part * self.dual
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Exponential_function_undefined_f); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 348, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_u_Exponential_function_undefined_f); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 348, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "dual_autodiff_cython/dual.pyx":361
  *         """
@@ -16275,9 +16624,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         real_part = math.log(self.real)
  *         dual_part = self.dual / self.real
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_Logarithm_undefined_for_non_posi); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 361, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_u_Logarithm_undefined_for_non_posi); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 361, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
   /* "dual_autodiff_cython/dual.pyx":374
  *         """
@@ -16286,9 +16635,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         real_part = math.sqrt(self.real)
  *         dual_part = self.dual / (2 * real_part)
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_Square_root_undefined_for_negati); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 374, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_u_Square_root_undefined_for_negati); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 374, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
   /* "dual_autodiff_cython/dual.pyx":409
  *         """
@@ -16297,9 +16646,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         real_part = math.tan(self.real)
  *         dual_part = self.dual / (math.cos(self.real) ** 2)
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_Tangent_undefined_at_odd_multipl); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 409, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_u_Tangent_undefined_at_odd_multipl); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 409, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
   /* "dual_autodiff_cython/dual.pyx":465
  *         """
@@ -16308,9 +16657,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         real_part = math.acosh(self.real)
  *         dual_part = self.dual / math.sqrt(self.real ** 2 - 1)
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_acosh_undefined_for_real_part_le); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 465, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_u_acosh_undefined_for_real_part_le); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 465, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "dual_autodiff_cython/dual.pyx":478
  *         """
@@ -16319,9 +16668,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         real_part = math.atanh(self.real)
  *         dual_part = self.dual / (1 - self.real ** 2)
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_atanh_undefined_for_absolute_rea); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 478, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_u_atanh_undefined_for_absolute_rea); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 478, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "dual_autodiff_cython/dual.pyx":18
  *     """
@@ -16330,13 +16679,13 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Initialize a Dual number.
  */
-  __pyx_tuple__22 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_real, __pyx_n_s_dual); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 18, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_init, 18, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 18, __pyx_L1_error)
-  __pyx_tuple__24 = PyTuple_Pack(1, ((PyObject*)__pyx_float_0_0)); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_real, __pyx_n_s_dual); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_init, 18, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_tuple__26 = PyTuple_Pack(1, ((PyObject*)__pyx_float_0_0)); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "dual_autodiff_cython/dual.pyx":36
  *         self.dual = dual
@@ -16345,10 +16694,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Provide an unambiguous string representation of the dual number.
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_repr, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_repr, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(0, 36, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":44
  *         return f"Dual({self.real}, {self.dual})"
@@ -16357,7 +16706,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Provide a readable string representation of the dual number.
  */
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_str, 44, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_str, 44, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 44, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":52
  *         return f"{self.real} + {self.dual}"
@@ -16366,10 +16715,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Add two dual numbers or a dual number and a scalar.
  */
-  __pyx_tuple__28 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_other); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 52, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_add, 52, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_other); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_add, 52, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 52, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":65
  *         return NotImplemented
@@ -16378,7 +16727,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Add a scalar to a dual number (reversed operands).
  */
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_radd, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_radd, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 65, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":74
  *         return self.__add__(other)
@@ -16387,7 +16736,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Subtract another dual number or a scalar.
  */
-  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sub, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sub, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 74, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":87
  *         return NotImplemented
@@ -16396,7 +16745,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Subtract a dual number from a scalar (reversed operands).
  */
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rsub, 87, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rsub, 87, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 87, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":98
  *         return NotImplemented
@@ -16405,7 +16754,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Multiply two dual numbers or a dual number and a scalar.
  */
-  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_mul, 98, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_mul, 98, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 98, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":114
  *         return NotImplemented
@@ -16414,7 +16763,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Multiply a scalar by a dual number (reversed operands).
  */
-  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rmul, 114, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rmul, 114, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 114, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":123
  *         return self.__mul__(other)
@@ -16423,10 +16772,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Divide a dual number by another dual number or a scalar.
  */
-  __pyx_tuple__35 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_other, __pyx_n_s_real_part, __pyx_n_s_dual_part); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 123, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_truediv, 123, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_tuple__37 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_other, __pyx_n_s_real_part, __pyx_n_s_dual_part); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__37);
+  __Pyx_GIVEREF(__pyx_tuple__37);
+  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_truediv, 123, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(0, 123, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":152
  *         return NotImplemented
@@ -16435,7 +16784,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Divide a scalar by a dual number (reversed operands).
  */
-  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rtruediv, 152, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rtruediv, 152, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 152, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":173
  *         return NotImplemented
@@ -16444,7 +16793,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Perform floor division between two dual numbers or a dual number and a scalar.
  */
-  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_floordiv, 173, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_floordiv, 173, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 173, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":193
  *         return NotImplemented
@@ -16453,7 +16802,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Perform floor division between a scalar and a dual number (reversed operands).
  */
-  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rfloordiv, 193, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rfloordiv, 193, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 193, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":209
  *         return NotImplemented
@@ -16462,7 +16811,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Raise a dual number to the power of another dual number or a scalar.
  */
-  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_pow, 209, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_pow, 209, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 209, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":234
  *         return NotImplemented
@@ -16471,7 +16820,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Raise a scalar to the power of a dual number (reversed operands).
  */
-  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rpow, 234, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_rpow, 234, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) __PYX_ERR(0, 234, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":250
  *         return NotImplemented
@@ -16480,7 +16829,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Negate the dual number.
  */
-  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_neg, 250, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_neg, 250, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 250, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":258
  *         return Dual(-self.real, -self.dual)
@@ -16489,7 +16838,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Return the positive value of the dual number.
  */
-  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_pos, 258, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) __PYX_ERR(0, 258, __pyx_L1_error)
+  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_pos, 258, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 258, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":266
  *         return self
@@ -16498,7 +16847,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check for equality between two dual numbers or a dual number and a scalar.
  */
-  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_eq, 266, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_eq, 266, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 266, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":279
  *         return NotImplemented
@@ -16507,7 +16856,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check for inequality between two dual numbers or a dual number and a scalar.
  */
-  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_ne, 279, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_ne, 279, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 279, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":288
  *         return not self.__eq__(other)
@@ -16516,7 +16865,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if a dual number is less than another dual number or a scalar.
  */
-  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_lt, 288, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_lt, 288, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(0, 288, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":301
  *         return NotImplemented
@@ -16525,7 +16874,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if a dual number is less than or equal to another dual number or a scalar.
  */
-  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_le, 301, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_le, 301, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 301, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":314
  *         return NotImplemented
@@ -16534,7 +16883,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if a dual number is greater than another dual number or a scalar.
  */
-  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_gt, 314, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_gt, 314, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 314, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":327
  *         return NotImplemented
@@ -16543,7 +16892,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if a dual number is greater than or equal to another dual number or a scalar.
  */
-  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_ge, 327, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 327, __pyx_L1_error)
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_ge, 327, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 327, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":340
  *         return NotImplemented
@@ -16552,10 +16901,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the exponential of a dual number.
  */
-  __pyx_tuple__50 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_real_part, __pyx_n_s_dual_part); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 340, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__50);
-  __Pyx_GIVEREF(__pyx_tuple__50);
-  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_exp, 340, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_tuple__52 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_real_part, __pyx_n_s_dual_part); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
+  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_exp, 340, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(0, 340, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":353
  *         return Dual(real_part, dual_part)
@@ -16564,7 +16913,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the natural logarithm of a dual number.
  */
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_log, 353, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(0, 353, __pyx_L1_error)
+  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_log, 353, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(0, 353, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":366
  *         return Dual(real_part, dual_part)
@@ -16573,7 +16922,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the square root of a dual number.
  */
-  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sqrt, 366, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sqrt, 366, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 366, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":379
  *         return Dual(real_part, dual_part)
@@ -16582,7 +16931,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the sine of a dual number.
  */
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sin, 379, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sin, 379, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(0, 379, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":390
  *         return Dual(real_part, dual_part)
@@ -16591,7 +16940,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the cosine of a dual number.
  */
-  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_cos, 390, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_cos, 390, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 390, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":401
  *         return Dual(real_part, dual_part)
@@ -16600,7 +16949,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the tangent of a dual number.
  */
-  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_tan, 401, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(0, 401, __pyx_L1_error)
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_tan, 401, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 401, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":414
  *         return Dual(real_part, dual_part)
@@ -16609,7 +16958,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the hyperbolic sine of a dual number.
  */
-  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sinh, 414, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 414, __pyx_L1_error)
+  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_sinh, 414, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(0, 414, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":425
  *         return Dual(real_part, dual_part)
@@ -16618,7 +16967,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the hyperbolic cosine of a dual number.
  */
-  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_cosh, 425, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 425, __pyx_L1_error)
+  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_cosh, 425, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(0, 425, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":436
  *         return Dual(real_part, dual_part)
@@ -16627,7 +16976,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the hyperbolic tangent of a dual number.
  */
-  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_tanh, 436, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(0, 436, __pyx_L1_error)
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_tanh, 436, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 436, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":447
  *         return Dual(real_part, dual_part)
@@ -16636,7 +16985,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the inverse hyperbolic sine of a dual number.
  */
-  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_asinh, 447, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(0, 447, __pyx_L1_error)
+  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_asinh, 447, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(0, 447, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":457
  *         return Dual(real_part, dual_part)
@@ -16645,7 +16994,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the inverse hyperbolic cosine of a dual number.
  */
-  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_acosh, 457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 457, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_acosh, 457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 457, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":470
  *         return Dual(real_part, dual_part)
@@ -16654,7 +17003,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the inverse hyperbolic tangent of a dual number.
  */
-  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_atanh, 470, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(0, 470, __pyx_L1_error)
+  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_atanh, 470, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(0, 470, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":483
  *         return Dual(real_part, dual_part)
@@ -16663,7 +17012,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the absolute value of a dual number.
  */
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_abs, 483, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 483, __pyx_L1_error)
+  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_abs, 483, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 483, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":491
  *         return Dual(abs(self.real), self.dual if self.real >= 0 else -self.dual)
@@ -16672,7 +17021,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the conjugate of a dual number (negates the dual part).
  */
-  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_conjugate, 491, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_codeobj__66 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_conjugate, 491, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__66)) __PYX_ERR(0, 491, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":499
  *         return Dual(self.real, -self.dual)
@@ -16681,7 +17030,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Serialize the dual number into a dictionary.
  */
-  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_to_dict, 499, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_to_dict, 499, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 499, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":507
  *         return {"real": self.real, "dual": self.dual}
@@ -16690,10 +17039,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(cls, data):
  *         """
  */
-  __pyx_tuple__66 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_data); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 507, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__66);
-  __Pyx_GIVEREF(__pyx_tuple__66);
-  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_from_dict, 507, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 507, __pyx_L1_error)
+  __pyx_tuple__68 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_data); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 507, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__68);
+  __Pyx_GIVEREF(__pyx_tuple__68);
+  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__68, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_from_dict, 507, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 507, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":517
  *         return cls(data["real"], data["dual"])
@@ -16702,13 +17051,13 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Round the real and dual parts to the given number of digits.
  */
-  __pyx_tuple__68 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_ndigits); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 517, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__68);
-  __Pyx_GIVEREF(__pyx_tuple__68);
-  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__68, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_round_2, 517, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 517, __pyx_L1_error)
-  __pyx_tuple__70 = PyTuple_Pack(1, ((PyObject *)__pyx_int_0)); if (unlikely(!__pyx_tuple__70)) __PYX_ERR(0, 517, __pyx_L1_error)
+  __pyx_tuple__70 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_ndigits); if (unlikely(!__pyx_tuple__70)) __PYX_ERR(0, 517, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__70);
   __Pyx_GIVEREF(__pyx_tuple__70);
+  __pyx_codeobj__71 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__70, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_round_2, 517, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__71)) __PYX_ERR(0, 517, __pyx_L1_error)
+  __pyx_tuple__72 = PyTuple_Pack(1, ((PyObject *)__pyx_int_0)); if (unlikely(!__pyx_tuple__72)) __PYX_ERR(0, 517, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__72);
+  __Pyx_GIVEREF(__pyx_tuple__72);
 
   /* "dual_autodiff_cython/dual.pyx":526
  *         return Dual(round(self.real, ndigits), round(self.dual, ndigits))
@@ -16717,7 +17066,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the floor of the real and dual parts.
  */
-  __pyx_codeobj__71 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_floor, 526, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__71)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_floor, 526, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(0, 526, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":534
  *         return Dual(math.floor(self.real), math.floor(self.dual))
@@ -16726,7 +17075,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the ceiling of the real and dual parts.
  */
-  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_ceil, 534, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(0, 534, __pyx_L1_error)
+  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_ceil, 534, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 534, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":542
  *         return Dual(math.ceil(self.real), math.ceil(self.dual))
@@ -16735,7 +17084,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if the dual number is zero.
  */
-  __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_is_zero, 542, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(0, 542, __pyx_L1_error)
+  __pyx_codeobj__75 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_is_zero, 542, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__75)) __PYX_ERR(0, 542, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":550
  *         return self.real == 0 and self.dual == 0
@@ -16744,7 +17093,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if the dual number is positive based on the real part.
  */
-  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_is_positive, 550, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 550, __pyx_L1_error)
+  __pyx_codeobj__76 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_is_positive, 550, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__76)) __PYX_ERR(0, 550, __pyx_L1_error)
 
   /* "dual_autodiff_cython/dual.pyx":558
  *         return self.real > 0
@@ -16753,7 +17102,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if the dual number is negative based on the real part.
  */
-  __pyx_codeobj__75 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_is_negative, 558, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__75)) __PYX_ERR(0, 558, __pyx_L1_error)
+  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_is_negative, 558, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 558, __pyx_L1_error)
+
+  /* "dual_autodiff_cython/dual.pyx":566
+ *         return self.real < 0
+ * 
+ * def differentiate(func, x):             # <<<<<<<<<<<<<<
+ *     """
+ *     Compute the first derivative of a function using dual numbers.
+ */
+  __pyx_tuple__78 = PyTuple_Pack(4, __pyx_n_s_func, __pyx_n_s_x, __pyx_n_s_dual_x, __pyx_n_s_result); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(0, 566, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__78);
+  __Pyx_GIVEREF(__pyx_tuple__78);
+  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dual_autodiff_cython_dual_pyx, __pyx_n_s_differentiate, 566, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 566, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -17150,9 +17511,9 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Initialize a Dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_1__init__, 0, __pyx_n_s_Dual___init, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_1__init__, 0, __pyx_n_s_Dual___init, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__24);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__26);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_init, __pyx_t_3) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
@@ -17163,7 +17524,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Provide an unambiguous string representation of the dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_3__repr__, 0, __pyx_n_s_Dual___repr, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_3__repr__, 0, __pyx_n_s_Dual___repr, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_repr, __pyx_t_3) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17175,7 +17536,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Provide a readable string representation of the dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_5__str__, 0, __pyx_n_s_Dual___str, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_5__str__, 0, __pyx_n_s_Dual___str, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_str, __pyx_t_3) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17187,7 +17548,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Add two dual numbers or a dual number and a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_7__add__, 0, __pyx_n_s_Dual___add, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_7__add__, 0, __pyx_n_s_Dual___add, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_add, __pyx_t_3) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17199,7 +17560,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Add a scalar to a dual number (reversed operands).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_9__radd__, 0, __pyx_n_s_Dual___radd, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_9__radd__, 0, __pyx_n_s_Dual___radd, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_radd, __pyx_t_3) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17211,7 +17572,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Subtract another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_11__sub__, 0, __pyx_n_s_Dual___sub, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_11__sub__, 0, __pyx_n_s_Dual___sub, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_sub, __pyx_t_3) < 0) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17223,7 +17584,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Subtract a dual number from a scalar (reversed operands).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_13__rsub__, 0, __pyx_n_s_Dual___rsub, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_13__rsub__, 0, __pyx_n_s_Dual___rsub, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_rsub, __pyx_t_3) < 0) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17235,7 +17596,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Multiply two dual numbers or a dual number and a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_15__mul__, 0, __pyx_n_s_Dual___mul, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_15__mul__, 0, __pyx_n_s_Dual___mul, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_mul, __pyx_t_3) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17247,7 +17608,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Multiply a scalar by a dual number (reversed operands).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_17__rmul__, 0, __pyx_n_s_Dual___rmul, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_17__rmul__, 0, __pyx_n_s_Dual___rmul, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_rmul, __pyx_t_3) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17259,7 +17620,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Divide a dual number by another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_19__truediv__, 0, __pyx_n_s_Dual___truediv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_19__truediv__, 0, __pyx_n_s_Dual___truediv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_truediv, __pyx_t_3) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17271,7 +17632,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Divide a scalar by a dual number (reversed operands).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_21__rtruediv__, 0, __pyx_n_s_Dual___rtruediv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_21__rtruediv__, 0, __pyx_n_s_Dual___rtruediv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_rtruediv, __pyx_t_3) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17283,7 +17644,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Perform floor division between two dual numbers or a dual number and a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_23__floordiv__, 0, __pyx_n_s_Dual___floordiv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_23__floordiv__, 0, __pyx_n_s_Dual___floordiv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_floordiv, __pyx_t_3) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17295,7 +17656,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Perform floor division between a scalar and a dual number (reversed operands).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_25__rfloordiv__, 0, __pyx_n_s_Dual___rfloordiv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_25__rfloordiv__, 0, __pyx_n_s_Dual___rfloordiv, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_rfloordiv, __pyx_t_3) < 0) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17307,7 +17668,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Raise a dual number to the power of another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_27__pow__, 0, __pyx_n_s_Dual___pow, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_27__pow__, 0, __pyx_n_s_Dual___pow, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 209, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_pow, __pyx_t_3) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17319,7 +17680,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Raise a scalar to the power of a dual number (reversed operands).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_29__rpow__, 0, __pyx_n_s_Dual___rpow, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_29__rpow__, 0, __pyx_n_s_Dual___rpow, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_rpow, __pyx_t_3) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17331,7 +17692,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Negate the dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_31__neg__, 0, __pyx_n_s_Dual___neg, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_31__neg__, 0, __pyx_n_s_Dual___neg, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_neg, __pyx_t_3) < 0) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17343,7 +17704,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Return the positive value of the dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_33__pos__, 0, __pyx_n_s_Dual___pos, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_33__pos__, 0, __pyx_n_s_Dual___pos, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_pos, __pyx_t_3) < 0) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17355,7 +17716,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check for equality between two dual numbers or a dual number and a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_35__eq__, 0, __pyx_n_s_Dual___eq, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_35__eq__, 0, __pyx_n_s_Dual___eq, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_eq, __pyx_t_3) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17367,7 +17728,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check for inequality between two dual numbers or a dual number and a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_37__ne__, 0, __pyx_n_s_Dual___ne, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_37__ne__, 0, __pyx_n_s_Dual___ne, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_ne, __pyx_t_3) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17379,7 +17740,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if a dual number is less than another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_39__lt__, 0, __pyx_n_s_Dual___lt, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_39__lt__, 0, __pyx_n_s_Dual___lt, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_lt, __pyx_t_3) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17391,7 +17752,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if a dual number is less than or equal to another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_41__le__, 0, __pyx_n_s_Dual___le, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_41__le__, 0, __pyx_n_s_Dual___le, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_le, __pyx_t_3) < 0) __PYX_ERR(0, 301, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17403,7 +17764,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if a dual number is greater than another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_43__gt__, 0, __pyx_n_s_Dual___gt, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_43__gt__, 0, __pyx_n_s_Dual___gt, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 314, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_gt, __pyx_t_3) < 0) __PYX_ERR(0, 314, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17415,7 +17776,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if a dual number is greater than or equal to another dual number or a scalar.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_45__ge__, 0, __pyx_n_s_Dual___ge, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_45__ge__, 0, __pyx_n_s_Dual___ge, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_ge, __pyx_t_3) < 0) __PYX_ERR(0, 327, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17427,7 +17788,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the exponential of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_47exp, 0, __pyx_n_s_Dual_exp, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_47exp, 0, __pyx_n_s_Dual_exp, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 340, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_exp, __pyx_t_3) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17439,7 +17800,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the natural logarithm of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_49log, 0, __pyx_n_s_Dual_log, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 353, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_49log, 0, __pyx_n_s_Dual_log, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_log, __pyx_t_3) < 0) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17451,7 +17812,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the square root of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_51sqrt, 0, __pyx_n_s_Dual_sqrt, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_51sqrt, 0, __pyx_n_s_Dual_sqrt, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_sqrt, __pyx_t_3) < 0) __PYX_ERR(0, 366, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17463,7 +17824,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the sine of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_53sin, 0, __pyx_n_s_Dual_sin, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_53sin, 0, __pyx_n_s_Dual_sin, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_sin, __pyx_t_3) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17475,7 +17836,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the cosine of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_55cos, 0, __pyx_n_s_Dual_cos, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_55cos, 0, __pyx_n_s_Dual_cos, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_cos, __pyx_t_3) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17487,7 +17848,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the tangent of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_57tan, 0, __pyx_n_s_Dual_tan, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_57tan, 0, __pyx_n_s_Dual_tan, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_tan, __pyx_t_3) < 0) __PYX_ERR(0, 401, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17499,7 +17860,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the hyperbolic sine of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_59sinh, 0, __pyx_n_s_Dual_sinh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 414, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_59sinh, 0, __pyx_n_s_Dual_sinh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__59)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 414, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_sinh, __pyx_t_3) < 0) __PYX_ERR(0, 414, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17511,7 +17872,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the hyperbolic cosine of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_61cosh, 0, __pyx_n_s_Dual_cosh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 425, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_61cosh, 0, __pyx_n_s_Dual_cosh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_cosh, __pyx_t_3) < 0) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17523,7 +17884,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the hyperbolic tangent of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_63tanh, 0, __pyx_n_s_Dual_tanh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__59)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 436, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_63tanh, 0, __pyx_n_s_Dual_tanh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 436, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_tanh, __pyx_t_3) < 0) __PYX_ERR(0, 436, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17535,7 +17896,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the inverse hyperbolic sine of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_65asinh, 0, __pyx_n_s_Dual_asinh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 447, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_65asinh, 0, __pyx_n_s_Dual_asinh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_asinh, __pyx_t_3) < 0) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17547,7 +17908,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the inverse hyperbolic cosine of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_67acosh, 0, __pyx_n_s_Dual_acosh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 457, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_67acosh, 0, __pyx_n_s_Dual_acosh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_acosh, __pyx_t_3) < 0) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17559,7 +17920,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the inverse hyperbolic tangent of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_69atanh, 0, __pyx_n_s_Dual_atanh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 470, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_69atanh, 0, __pyx_n_s_Dual_atanh, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_atanh, __pyx_t_3) < 0) __PYX_ERR(0, 470, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17571,7 +17932,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the absolute value of a dual number.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_71abs, 0, __pyx_n_s_Dual_abs, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 483, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_71abs, 0, __pyx_n_s_Dual_abs, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_abs, __pyx_t_3) < 0) __PYX_ERR(0, 483, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17583,7 +17944,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the conjugate of a dual number (negates the dual part).
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_73conjugate, 0, __pyx_n_s_Dual_conjugate, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_73conjugate, 0, __pyx_n_s_Dual_conjugate, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__66)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_conjugate, __pyx_t_3) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17595,7 +17956,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Serialize the dual number into a dictionary.
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_75to_dict, 0, __pyx_n_s_Dual_to_dict, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_75to_dict, 0, __pyx_n_s_Dual_to_dict, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17607,7 +17968,7 @@ if (!__Pyx_RefNanny) {
  *     def from_dict(cls, data):
  *         """
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_77from_dict, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Dual_from_dict, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 507, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_77from_dict, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Dual_from_dict, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__69)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 507, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = __Pyx_Method_ClassMethod(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 507, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -17622,9 +17983,9 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Round the real and dual parts to the given number of digits.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_79__round__, 0, __pyx_n_s_Dual___round, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__69)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 517, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_79__round__, 0, __pyx_n_s_Dual___round, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__71)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 517, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__70);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__72);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_round_2, __pyx_t_4) < 0) __PYX_ERR(0, 517, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
@@ -17635,7 +17996,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the floor of the real and dual parts.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_81floor, 0, __pyx_n_s_Dual_floor, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__71)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_81floor, 0, __pyx_n_s_Dual_floor, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 526, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_floor, __pyx_t_4) < 0) __PYX_ERR(0, 526, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -17647,7 +18008,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the ceiling of the real and dual parts.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_83ceil, 0, __pyx_n_s_Dual_ceil, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 534, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_83ceil, 0, __pyx_n_s_Dual_ceil, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 534, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_ceil, __pyx_t_4) < 0) __PYX_ERR(0, 534, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -17659,7 +18020,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if the dual number is zero.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_85is_zero, 0, __pyx_n_s_Dual_is_zero, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 542, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_85is_zero, 0, __pyx_n_s_Dual_is_zero, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__75)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 542, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_is_zero, __pyx_t_4) < 0) __PYX_ERR(0, 542, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -17671,7 +18032,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if the dual number is positive based on the real part.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_87is_positive, 0, __pyx_n_s_Dual_is_positive, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 550, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_87is_positive, 0, __pyx_n_s_Dual_is_positive, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 550, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_is_positive, __pyx_t_4) < 0) __PYX_ERR(0, 550, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -17683,7 +18044,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if the dual number is negative based on the real part.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_89is_negative, 0, __pyx_n_s_Dual_is_negative, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__75)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 558, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_4Dual_89is_negative, 0, __pyx_n_s_Dual_is_negative, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_is_negative, __pyx_t_4) < 0) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -17699,6 +18060,18 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_4);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_Dual_2, __pyx_t_4) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "dual_autodiff_cython/dual.pyx":566
+ *         return self.real < 0
+ * 
+ * def differentiate(func, x):             # <<<<<<<<<<<<<<
+ *     """
+ *     Compute the first derivative of a function using dual numbers.
+ */
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_20dual_autodiff_cython_4dual_1differentiate, 0, __pyx_n_s_differentiate, NULL, __pyx_n_s_dual_autodiff_cython_dual, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 566, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_differentiate, __pyx_t_2) < 0) __PYX_ERR(0, 566, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "dual_autodiff_cython/dual.pyx":1
@@ -19805,7 +20178,7 @@ static PyObject *__Pyx_ImportDottedModule_WalkParts(PyObject *module, PyObject *
 #endif
 static PyObject *__Pyx__ImportDottedModule(PyObject *name, PyObject *parts_tuple) {
 #if PY_MAJOR_VERSION < 3
-    PyObject *module, *from_list, *star = __pyx_n_s__21;
+    PyObject *module, *from_list, *star = __pyx_n_s__23;
     CYTHON_UNUSED_VAR(parts_tuple);
     from_list = PyList_New(1);
     if (unlikely(!from_list))
@@ -21763,7 +22136,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__76);
+        name = __Pyx_NewRef(__pyx_n_s__80);
     }
     return name;
 }

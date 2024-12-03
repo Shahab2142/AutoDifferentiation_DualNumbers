@@ -10,6 +10,7 @@ The `dual_autodiff` package is designed to:
 
 - Simplify the computation of derivatives for scalar functions.
 - Provide a clean and intuitive API for differentiating mathematical functions.
+- Include a built-in `differentiate` function to compute derivatives of user-defined functions directly.
 - Ensure robust error handling and type checking for safe operations.
 
 Use the navigation below to explore the API and learn how to effectively use the package.

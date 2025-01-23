@@ -198,3 +198,10 @@ This package was created as part of university coursework and is not open for pu
 ## **License**
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+Declaration of Autogenerative Tools
+
+In this project, I used GitHub Copilot as a coding assistant. I mainly used it to generate the plots in Figure 1, 2, 3, 4, 5 and 6 and the Tables 1, 2, and 3. I also used it within my code to create comments, docstring my functions, debug and format markdown cells explaining the different sections in the notebook.
+
+In regards to the report, I used the Overleaf AI which uses ChatGPT to help write the mathematics in latex format, and also used it to correctly format various sections of the report as I am quite new to LaTeX.

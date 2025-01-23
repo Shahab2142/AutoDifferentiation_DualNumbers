@@ -14,7 +14,7 @@ setup(
     url="https://github.com/Shahab2142/dual_autodiff",
     packages=find_packages(),
     zip_safe=False,
-    install_requires=[],  # No dependencies since only math is used
+    install_requires=[], 
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Education",
